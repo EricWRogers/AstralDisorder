@@ -12,11 +12,18 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         controller.ChangeState<HUDIdleState>();
+        pauseMenuUI.alpha = 0f;
+        pauseMenuUI.blocksRaycasts = false;
+        pauseMenuUI.interactable = false;
     }
 
     public void Settings()
     {
         controller.ChangeState<HUDSettingsMenu>();
+        pauseMenuUI.alpha = 0f;
+        pauseMenuUI.blocksRaycasts = false;
+        pauseMenuUI.interactable = false;
+
         sensitivitySlider.interactable = true;
     }
 

@@ -23,7 +23,6 @@ public class UIFunctions : MonoBehaviour
         SaveManager.Instance.ResetTracked();
         player.transform.position = Checkpoint.spawnpoint.position;
         player.transform.rotation = Checkpoint.spawnpoint.rotation;
-
     }
 
     public void Quit()

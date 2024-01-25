@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using OmnicatLabs.Audio;
 
 public class DemoLoseController : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class DemoLoseController : MonoBehaviour
         if (other.CompareTag("Player") && !activated)
         {
             GameStateController.Instance.ActivateLose();
+            AudioManager.Instance.Stop("MonsterFootstep");
             activated = true;
         }
     }

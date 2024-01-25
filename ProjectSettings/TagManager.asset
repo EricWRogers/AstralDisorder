@@ -32,8 +32,8 @@ TagManager:
   - InteractableV
   - NotWalkable
   - NavIgnore
-  - 
-  - 
+  - Rubble
+  - TriggerZone
   - 
   - 
   - 

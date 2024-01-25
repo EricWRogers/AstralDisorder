@@ -5,7 +5,8 @@ using UnityEngine;
 public class ArmController : MonoBehaviour
 {
     private string currentState;
-    private Animator anim;
+    [HideInInspector]
+    public Animator anim;
 
     public static ArmController Instance;
 
