@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b3fcb84f65f3bad4daa8c69202572ed0, type: 3}
-  m_Name: MagBootsLockerKeyCard
+  m_Name: Hammer
   m_EditorClassIdentifier: 
-  id: MagBootsLockerKey
-  displayName: Locker Key Card
-  icon: {fileID: 21300000, guid: 2761af953f3568c42a2d536c31ecdb16, type: 3}
-  prefab: {fileID: 2279548547986627209, guid: aa58a9c284ea91e4a904bf6e341e9e92, type: 3}
+  id: Plasmatorch
+  displayName: GravHammer
+  icon: {fileID: 21300000, guid: 809337b83af54924b96153ddd1a6aef6, type: 3}
+  prefab: {fileID: 6081094488805106698, guid: feae37d2e100dc44081fa94c4315991e, type: 3}
   onAddToInventory:
     m_PersistentCalls:
       m_Calls: []

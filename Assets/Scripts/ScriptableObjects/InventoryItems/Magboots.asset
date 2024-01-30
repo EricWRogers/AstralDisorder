@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b3fcb84f65f3bad4daa8c69202572ed0, type: 3}
-  m_Name: MagBootsLockerKeyCard
+  m_Name: Magboots
   m_EditorClassIdentifier: 
-  id: MagBootsLockerKey
-  displayName: Locker Key Card
-  icon: {fileID: 21300000, guid: 2761af953f3568c42a2d536c31ecdb16, type: 3}
-  prefab: {fileID: 2279548547986627209, guid: aa58a9c284ea91e4a904bf6e341e9e92, type: 3}
+  id: MagBootsUpgrade
+  displayName: Magboots
+  icon: {fileID: 21300000, guid: 94a691e0138832a479cd372859902881, type: 3}
+  prefab: {fileID: 4034895537341688813, guid: 1216f8aedb7209643b623630ba8c9352, type: 3}
   onAddToInventory:
     m_PersistentCalls:
       m_Calls: []
