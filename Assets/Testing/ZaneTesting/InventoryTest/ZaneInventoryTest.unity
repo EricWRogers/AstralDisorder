@@ -1238,8 +1238,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory:
-  - Data: {fileID: 11400000, guid: b5fa98e88d18bc746a509605efbca41c, type: 2}
-    stackSize: 1
+  - Data: {fileID: 11400000, guid: 7f2d166c4498cf34e8ac3466eba79992, type: 2}
+    stackSize: 0
 --- !u!1 &1676379273
 GameObject:
   m_ObjectHideFlags: 0
@@ -1274,7 +1274,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -643.87573, y: 59.88501}
+  m_AnchoredPosition: {x: -643.87573, y: 565}
   m_SizeDelta: {x: 1227.0409, y: 86.9499}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1676379275
