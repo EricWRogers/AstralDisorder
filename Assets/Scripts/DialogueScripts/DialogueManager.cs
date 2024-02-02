@@ -24,7 +24,9 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
-        textArea = dialogueArea.GetComponentInChildren<TextMeshProUGUI>();
+        if (dialogueArea != null)
+            textArea = dialogueArea.GetComponentInChildren<TextMeshProUGUI>();
+        else Debug.Log("Could not find dialogueArea. Make sure it is assigned in the inspector");
     }
 
     public void ShowDialogue(string message)
