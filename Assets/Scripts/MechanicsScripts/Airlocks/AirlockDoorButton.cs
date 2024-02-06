@@ -37,7 +37,7 @@ public class AirlockDoorButton : Interactable
         {
             OmniTween.CancelTween(doorPivot, true);
             AudioManager.Instance.Play("Door", gameObject);
-            doorPivot.RealTweenYRot(toAngle, timeToOpen, () => onDoorOpen.Invoke());
+            doorPivot.TweenLocalYRotation(toAngle, timeToOpen, () => onDoorOpen.Invoke());
             doorToOpen.doorOpened = true;
             SetInteractable(false);
             buttonForOtherDoor.SetInteractable(false);

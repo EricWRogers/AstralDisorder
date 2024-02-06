@@ -10,6 +10,6 @@ public class LightsPuzzleFinalDoor : MonoBehaviour
 
     public void Open()
     {
-        doorPivot.RealTweenYRot(90f, timeToOpen);
+        doorPivot.TweenLocalYRotation(90f, timeToOpen);
     }
 }

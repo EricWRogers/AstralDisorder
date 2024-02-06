@@ -57,7 +57,9 @@ public class ObjectInteraction : MonoBehaviour
             else
             {
                 SetInteractTextVisibility(false);
-                interactText.SetText("");
+                if (interactText != null)
+                    interactText.SetText("");
+                else Debug.Log("No interact text object found. Make sure it is assigned in the inspector");
                 interactableObject = null;
             }
         }
