@@ -64,7 +64,6 @@ public class FPSMelee : MonoBehaviour
             }
             if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit2, attackDistance, ~(1 << LayerMask.NameToLayer("TriggerZone"))))
             {
-                Debug.Log(hit2.transform.name);
                 Instantiate(sparks, hit2.point, Quaternion.identity);
                 AudioManager.Instance.Play("Hammer");
             }
