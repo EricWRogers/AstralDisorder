@@ -29,7 +29,7 @@ public class HeadbobController : MonoBehaviour
     private void FixedUpdate()
     {
         if (!enable) return;
-        if (!controller.isGrounded || controller.isCrouching || controller.slideKeyDown) return;
+        if (!controller.isGrounded || controller.isCrouching || controller.slideKeyDown || controller.wallRunning) return;
 
         CheckMotion();
         ResetPosition();

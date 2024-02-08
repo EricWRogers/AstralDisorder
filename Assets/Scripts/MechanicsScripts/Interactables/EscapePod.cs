@@ -15,7 +15,7 @@ public class EscapePod : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            doorPivot.RealTweenZRot(0f, 1f, Launch);
+            doorPivot.TweenLocalZRotation(0f, 1f, Launch);
         }
 
     }

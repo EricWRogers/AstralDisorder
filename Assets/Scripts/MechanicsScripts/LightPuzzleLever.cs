@@ -46,12 +46,12 @@ public class LightPuzzleLever : Interactable
 
         if (!isFlipped)
         {
-            leverPivot.RealTweenZRot(0, flipTime);
+            leverPivot.TweenLocalZRotation(0, flipTime);
         }
         else
         {
             //Need to rework part of the audio manager for this to work AudioManager.Instance.Play("PowerOn", gameObject);
-            leverPivot.RealTweenZRot(-85f, flipTime);
+            leverPivot.TweenLocalZRotation(-85f, flipTime);
         }
 
         for(int i = 0; i < linkedLights.Count; i++)

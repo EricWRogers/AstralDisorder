@@ -67,7 +67,7 @@ public class Locker : Interactable
 
         if (unlockItem == null)
         {
-            doorPivot.RealTweenYRot(90f, 2f);
+            doorPivot.TweenLocalYRotation(90f, 2f);
 
             SetInteractable(false);
         }
@@ -75,7 +75,7 @@ public class Locker : Interactable
         {
             if (InventorySystem.Instance.Get(unlockItem) != null)
             {
-                doorPivot.RealTweenYRot(90f, 2f);
+                doorPivot.TweenLocalYRotation(90f, 2f);
                 SetInteractable(false);
             }
         }
