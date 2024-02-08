@@ -1,4 +1,4 @@
-/*using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
@@ -39,4 +39,4 @@ public class Record : MonoBehaviour
             m_Recorder.SaveToClip(clip);
         }
     }
-}*/
+}
