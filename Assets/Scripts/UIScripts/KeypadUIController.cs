@@ -4,6 +4,13 @@ using UnityEngine.Events;
 using OmnicatLabs.Timers;
 using OmnicatLabs.Audio;
 
+public enum DifficultyLevel
+{
+    Easy,
+    Normal,
+    Hard,
+    Extreme
+}
 
 public class KeypadUIController : MonoBehaviour
 {
@@ -20,7 +27,7 @@ public class KeypadUIController : MonoBehaviour
     public UIStateMachineController controller;
 
     private KeyCode[] validKeys = {
-        KeyCode.Keypad0, KeyCode.Keypad1, KeyCode.Keypad2, KeyCode.Keypad3, KeyCode.Keypad4, 
+        KeyCode.Keypad0, KeyCode.Keypad1, KeyCode.Keypad2, KeyCode.Keypad3, KeyCode.Keypad4,
         KeyCode.Keypad5, KeyCode.Keypad6, KeyCode.Keypad7, KeyCode.Keypad8, KeyCode.Keypad9,
         KeyCode.Alpha0, KeyCode.Alpha1, KeyCode.Alpha2, KeyCode.Alpha3, KeyCode.Alpha4,
         KeyCode.Alpha5, KeyCode.Alpha6, KeyCode.Alpha7, KeyCode.Alpha8, KeyCode.Alpha9
@@ -66,7 +73,7 @@ public class KeypadUIController : MonoBehaviour
 
 
     public void Quit()
-    {       
+    {
         controller.ChangeState(controller.nullState);
     }
 
@@ -99,26 +106,6 @@ public class KeypadUIController : MonoBehaviour
         }
     }
 
-    //void Update()
-    //{
-    //    if (buttonCount == guesses)
-    //    {
-    //        if (input == correctPass)
-    //        {
-    //            displayText.text = "<color=#15F00B>" + input.ToString();
-    //            buttonCount = 0;
-    //            Debug.Log("Correct");
-    //            onCorrectPassword.Invoke();
-    //        }
-    //        else
-    //        {
-    //            displayText.text = "<color=#F00B0B>" + input.ToString();
-    //            //wrongTimer.StartTimer(wrongTimer.countDownTime, wrongTimer.autoRestart);
-    //            buttonCount = 0;
-    //        }
-    //    }
-    //}
-
     public void ClearInput()
     {
         input = "";
@@ -127,6 +114,26 @@ public class KeypadUIController : MonoBehaviour
 
     public void CloseMenu()
     {
+        // Handle time behavior based on difficulty when closing the menu
+        DifficultyLevel difficulty = GameManager.Instance.GetDifficultyLevel();
+
+        switch (difficulty)
+        {
+            case DifficultyLevel.Easy:
+                Time.timeScale = 0f; // Time freezes
+                break;
+            case DifficultyLevel.Normal:
+                Time.timeScale = 0.5f; // Time is halved
+                break;
+            case DifficultyLevel.Hard:
+            case DifficultyLevel.Extreme:
+                Time.timeScale = 1f; // Real time
+                break;
+            default:
+                Time.timeScale = 1f; // Default to real time
+                break;
+        }
+
         keypadUI.SetActive(false);
     }
 
@@ -149,7 +156,7 @@ public class KeypadUIController : MonoBehaviour
         {
             ClearInput();
         }
-        
+
         else if (!string.IsNullOrEmpty(inputFromKeyCode))
         {
             if (buttonCount < 4)
