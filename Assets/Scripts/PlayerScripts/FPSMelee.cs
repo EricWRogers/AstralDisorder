@@ -5,7 +5,6 @@ using OmnicatLabs.Audio;
 
 public class FPSMelee : MonoBehaviour
 {
-    public Camera cam;
     public float attackDistance = 1f;
     public float attackCooldown = .5f;
     public LayerMask interactionLayers;
@@ -14,8 +13,14 @@ public class FPSMelee : MonoBehaviour
     private bool canAttack = true;
     private int attackCount = 0;
     private Fracture fractureComponent;
+    private Camera cam;
 
     public GameObject sparks;
+
+    private void Start()
+    {
+        cam = OmnicatLabs.CharacterControllers.CharacterController.Instance.mainCam;
+    }
 
     public void OnAttack(InputAction.CallbackContext context)
     {
@@ -59,12 +64,12 @@ public class FPSMelee : MonoBehaviour
                 {
                     fractureComponent = frac;
                     frac.CauseFracture(-hit.normal);
-                    Instantiate(sparks, hit.point, Quaternion.identity);
+                    Instantiate(sparks, hit.point, Random.rotation);
                 }
             }
             if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit2, attackDistance, ~(1 << LayerMask.NameToLayer("TriggerZone"))))
             {
-                Instantiate(sparks, hit2.point, Quaternion.identity);
+                Instantiate(sparks, hit2.point, Random.rotation);
                 AudioManager.Instance.Play("Hammer");
             }
             else
