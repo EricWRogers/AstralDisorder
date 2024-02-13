@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class SavingText : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Animator animator; 
+    void SavingGame()
     {
-        
+        animator.SetTrigger("Saving");  
     }
+    
 
     // Update is called once per frame
     void Update()
