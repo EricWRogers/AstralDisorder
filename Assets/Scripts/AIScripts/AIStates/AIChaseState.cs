@@ -51,7 +51,7 @@ public class AIChaseState : MonoBehaviour, IEnemyState
         {
             stateMachine.SetState(gameObject.GetComponent<AITransitionState>());
         }
-        else if (Attackable(target))
+        else if (Attackable(target) && characterController.isGrounded == true)
         {
             stateMachine.SetState(gameObject.GetComponent<AIAttackState>());
         }

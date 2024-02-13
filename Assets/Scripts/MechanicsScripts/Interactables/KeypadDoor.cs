@@ -46,7 +46,7 @@ public class KeypadDoor : MonoBehaviour, ISaveable
 
     public void Open()
     {
-        doorPivot.RealTweenYRot(110f, 1.8f);
+        doorPivot.TweenLocalYRotation(110f, 1.8f);
         AudioManager.Instance.Play("Door", gameObject);
     }
 }
