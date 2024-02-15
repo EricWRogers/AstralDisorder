@@ -4,7 +4,6 @@ using UnityEngine.Events;
 using OmnicatLabs.Timers;
 using OmnicatLabs.Audio;
 
-
 public class KeypadUIController : MonoBehaviour
 {
     public TMP_Text displayText;
@@ -20,16 +19,16 @@ public class KeypadUIController : MonoBehaviour
     public UIStateMachineController controller;
 
     private KeyCode[] validKeys = {
-        KeyCode.Keypad0, KeyCode.Keypad1, KeyCode.Keypad2, KeyCode.Keypad3, KeyCode.Keypad4, 
+        KeyCode.Keypad0, KeyCode.Keypad1, KeyCode.Keypad2, KeyCode.Keypad3, KeyCode.Keypad4,
         KeyCode.Keypad5, KeyCode.Keypad6, KeyCode.Keypad7, KeyCode.Keypad8, KeyCode.Keypad9,
         KeyCode.Alpha0, KeyCode.Alpha1, KeyCode.Alpha2, KeyCode.Alpha3, KeyCode.Alpha4,
         KeyCode.Alpha5, KeyCode.Alpha6, KeyCode.Alpha7, KeyCode.Alpha8, KeyCode.Alpha9
     };
 
+    private float previousTimeScale = 1f;
+
     private void Start()
     {
-        //correctPass = "123";
-        //correctPass = FindObjectOfType<RandNumGen>().RandNum.ToString();
         guesses = correctPass.Length;
         Debug.Log(correctPass);
     }
@@ -39,22 +38,18 @@ public class KeypadUIController : MonoBehaviour
         switch (valueEntered)
         {
             case "Q":
-                //Debug.Log("Quit");
                 Quit();
                 break;
             case "C":
-                //Debug.Log("Clear");
                 Clear();
                 break;
             default:
-                //Debug.Log("Default");
                 if (buttonCount < 4)
                 {
                     buttonCount++;
                     input += valueEntered;
                     displayText.text = input.ToString();
                     AudioManager.Instance.Play("Keypress");
-
                 }
                 if (buttonCount == 4)
                 {
@@ -64,10 +59,12 @@ public class KeypadUIController : MonoBehaviour
         }
     }
 
-
     public void Quit()
-    {       
+    {
         controller.ChangeState(controller.nullState);
+
+        // Reset time scale to previous value
+        Time.timeScale = 1f;
     }
 
     public void Clear()
@@ -86,6 +83,12 @@ public class KeypadUIController : MonoBehaviour
                 displayText.text = "<color=#15F00B>" + input.ToString();
                 onCorrectPassword.Invoke();
                 TimerManager.Instance.CreateTimer(timeAfterSubmit, () => { Quit(); });
+
+                // Adjust game time based on difficulty
+              
+                previousTimeScale = Time.timeScale;
+                Time.timeScale =1f ;
+
                 AudioManager.Instance.Play("Keypadsuccess");
             }
             else
@@ -94,30 +97,9 @@ public class KeypadUIController : MonoBehaviour
                 onIncorrectPassword.Invoke();
                 TimerManager.Instance.CreateTimer(timeAfterSubmit, () => { Clear(); });
                 AudioManager.Instance.Play("Keypadfail");
-
             }
         }
     }
-
-    //void Update()
-    //{
-    //    if (buttonCount == guesses)
-    //    {
-    //        if (input == correctPass)
-    //        {
-    //            displayText.text = "<color=#15F00B>" + input.ToString();
-    //            buttonCount = 0;
-    //            Debug.Log("Correct");
-    //            onCorrectPassword.Invoke();
-    //        }
-    //        else
-    //        {
-    //            displayText.text = "<color=#F00B0B>" + input.ToString();
-    //            //wrongTimer.StartTimer(wrongTimer.countDownTime, wrongTimer.autoRestart);
-    //            buttonCount = 0;
-    //        }
-    //    }
-    //}
 
     public void ClearInput()
     {
@@ -125,8 +107,41 @@ public class KeypadUIController : MonoBehaviour
         displayText.text = input.ToString();
     }
 
+    public void OpenMenu()
+    {
+        // Store previous time scale
+        previousTimeScale = Time.timeScale;
+
+        // Adjust time scale based on difficulty
+       
+        Difficulty difficulty = GameManager.Instance.GetDifficulty();
+        switch (difficulty)
+        {
+            case Difficulty.Easy:
+                Time.timeScale = 0f; // Pause time
+                break;
+            case Difficulty.Normal:
+                Time.timeScale = 0.5f; // Half time
+                break;
+            case Difficulty.Hard:
+                Time.timeScale = 1f;
+                break;
+            case Difficulty.Extreme:
+                Time.timeScale = 1f; // Normal time
+                break;
+        }
+    
+
+        // Activate keypad UI
+        keypadUI.SetActive(true);
+    }
+
     public void CloseMenu()
     {
+        // Reset time scale to previous value
+        Time.timeScale = 1f;
+
+        // Deactivate keypad UI
         keypadUI.SetActive(false);
     }
 
@@ -149,7 +164,7 @@ public class KeypadUIController : MonoBehaviour
         {
             ClearInput();
         }
-        
+
         else if (!string.IsNullOrEmpty(inputFromKeyCode))
         {
             if (buttonCount < 4)
