@@ -27,19 +27,23 @@ public class AIAttackState : MonoBehaviour, IEnemyState
         controller = GameStateController.Instance;
         lose = false;
 
-        anim.SetFloat("Scream", 1);
+        anim.SetFloat("Sprint", 1);
     }
 
     public void Run() //Good ol update
     {
         agent.SetDestination(target.transform.position);
 
-        if (!lose && !chase.ValidatePath(target) && Vector3.Distance(chase.lastHit.position, target.transform.position) <= attackRange && Vector3.Distance(agent.transform.position, target.transform.position) <= attackRange)
+        if (!lose && !chase.ValidatePath(target) && Vector3.Distance(chase.lastHit.position, target.transform.position) <= attackRange)
         {
-
-            controller.ActivateLose();
-            lose = true;
-            stateMachine.SetState(gameObject.GetComponent<AIIdleState>());
+            if (Vector3.Distance(agent.transform.position, target.transform.position) <= attackRange)
+            {
+                anim.SetFloat("Sprint", 0);
+                anim.SetFloat("Scream", 1);
+                controller.ActivateLose();
+                lose = true;
+                stateMachine.SetState(gameObject.GetComponent<AIIdleState>());
+            }
         }
         else
         {
