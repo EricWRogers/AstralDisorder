@@ -8,11 +8,10 @@ public class InventorySystem : MonoBehaviour
     private Dictionary<InventoryItemData, InventoryItem> m_itemDictionary;
     public static InventorySystem Instance;
 
-    public List<InventoryItem> inventory { get; private set; }
+    public List<InventoryItem> inventory;
 
-    private List<InventoryItem> savedInventory = new List<InventoryItem>();
-    private Dictionary<InventoryItemData, InventoryItem> savedDictionary = new Dictionary<InventoryItemData, InventoryItem>();
-
+    public delegate void OnItemChanged();
+    public OnItemChanged onItemChangedCallBack;
     private void Awake()
     {
         if (Instance == null)
@@ -23,8 +22,6 @@ public class InventorySystem : MonoBehaviour
     {
         m_itemDictionary = new Dictionary<InventoryItemData, InventoryItem>();
         inventory = new List<InventoryItem>();
-        SaveManager.Instance.onReset.AddListener(ResetInventory);
-        SaveManager.Instance.onSave.AddListener(SaveInventory);
     }
 
     public InventoryItem Get(InventoryItemData referenceData)
@@ -38,9 +35,9 @@ public class InventorySystem : MonoBehaviour
 
     public InventoryItem Get(string name)
     {
-        var item = inventory.Find(item => item.data.displayName == name);
+        var item = inventory.Find(item => item.Data.displayName == name);
         if (item != null)
-        if (m_itemDictionary.TryGetValue(item.data, out InventoryItem value))
+        if (m_itemDictionary.TryGetValue(item.Data, out InventoryItem value))
         {
             return value;
         }
@@ -61,6 +58,8 @@ public class InventorySystem : MonoBehaviour
             inventory.Add(newItem);
             m_itemDictionary.Add(referenceData, newItem);
         }
+        if (onItemChangedCallBack != null)
+            onItemChangedCallBack.Invoke();
     }
 
     public void Remove(InventoryItemData referenceData)
@@ -75,47 +74,20 @@ public class InventorySystem : MonoBehaviour
                 m_itemDictionary.Remove(referenceData);
             }
         }
+        if (onItemChangedCallBack != null)
+            onItemChangedCallBack.Invoke();
     }
 
-    public void Clear()
-    {
-        inventory.Clear();
-        m_itemDictionary.Clear();
-    }
-
-    private void ResetInventory()
-    {
-        inventory.Clear();
-        m_itemDictionary.Clear();
-
-        foreach ((var key, var value) in savedDictionary)
-        {
-            m_itemDictionary.Add(key, value);
-        }
-        inventory.AddRange(savedInventory);
-    }
-
-    private void SaveInventory()
-    {
-        savedInventory.Clear();
-        savedDictionary.Clear();
-
-        foreach ((var key, var value) in m_itemDictionary)
-        {
-            savedDictionary.Add(key, value);
-        }
-        savedInventory.AddRange(inventory);
-    }
 }
 [Serializable]
 public class InventoryItem
 {
-    public InventoryItemData data { get; private set; }
-    public int stackSize { get; private set; }
+    public InventoryItemData Data;
+    public int stackSize;
 
     public InventoryItem(InventoryItemData source)
     {
-        data = source;
+        Data = source;
         AddToStack();
     }
 
