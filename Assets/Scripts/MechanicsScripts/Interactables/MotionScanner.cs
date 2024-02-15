@@ -34,7 +34,7 @@ public class MotionScanner : MonoBehaviour
                 AudioManager.Instance.Play("Door", gameObject);
 
             OmniTween.CancelTween(doorPivot);
-            doorPivot.RealTweenYRot(openAngle, timeToOpen, () => onDoorOpen.Invoke());
+            doorPivot.TweenLocalYRotation(openAngle, timeToOpen, () => onDoorOpen.Invoke());
             doorOpened = true;
         }
     }
@@ -53,7 +53,7 @@ public class MotionScanner : MonoBehaviour
         {
             OmniTween.CancelTween(doorPivot, true);
             doorOpened = false;
-            doorPivot.RealTweenYRot(0f, timeToOpen, () => onDoorClose.Invoke());
+            doorPivot.TweenLocalYRotation(0f, timeToOpen, () => onDoorClose.Invoke());
         }
     }
 

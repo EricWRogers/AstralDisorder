@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3fcb84f65f3bad4daa8c69202572ed0, type: 3}
+  m_Name: Magboots
+  m_EditorClassIdentifier: 
+  id: MagBootsUpgrade
+  displayName: Magboots
+  icon: {fileID: 21300000, guid: 94a691e0138832a479cd372859902881, type: 3}
+  prefab: {fileID: 4034895537341688813, guid: 1216f8aedb7209643b623630ba8c9352, type: 3}
+  onAddToInventory:
+    m_PersistentCalls:
+      m_Calls: []
+  isDefaultItem: 0
