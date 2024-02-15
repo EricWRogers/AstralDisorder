@@ -25,6 +25,7 @@ public class ObjectInteraction : MonoBehaviour
     void Start()
     {
         SetInteractTextVisibility(false);
+        
         interactKeyName = OmnicatLabs.CharacterControllers.CharacterController.Instance.GetComponent<PlayerInput>().actions["Interact"].GetBindingDisplayString();
     }
 
