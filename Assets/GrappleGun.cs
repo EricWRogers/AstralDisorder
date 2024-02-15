@@ -12,6 +12,7 @@ public class GrappleGun : MonoBehaviour
     public float force = 100f;
     public float segmentCutoff = .1f;
 
+    private GameObject segmentInstance;
     private GameObject ropeInstance;
 
     public void OnGrapple(InputAction.CallbackContext ctx)
@@ -26,7 +27,7 @@ public class GrappleGun : MonoBehaviour
     {
         if (ropeInstance != null)
         {
-            ropeInstance.GetComponent<Rigidbody>().AddForce(transform.forward * force * Time.deltaTime);
+            ropeInstance.GetComponent<Rigidbody>().AddForce(Vector3.forward * force * Time.deltaTime);
         }
     }
 
@@ -34,9 +35,9 @@ public class GrappleGun : MonoBehaviour
     {
         if (ropeInstance != null)
         {
-            if (Vector3.Distance(launchPoint.position, ropeInstance.transform.position) > segmentCutoff)
+            if (segmentInstance == null || (Vector3.Distance(launchPoint.position, segmentInstance.transform.position) > segmentCutoff))
             {
-                GameObject segmentInstance = Instantiate(segmentPrefab, ropeInstance.transform.position, segmentPrefab.transform.rotation, ropeInstance.transform);
+                segmentInstance = Instantiate(segmentPrefab, launchPoint.transform.position, Quaternion.Euler(new Vector3(90f, 0f, 0f)), ropeInstance.transform);
                 segmentInstance.transform.position = new Vector3(transform.position.x, transform.position.y + .5f, transform.position.z);
             }
         }
