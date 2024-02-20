@@ -8,10 +8,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 351001743917606931, guid: a81d77e822ec6e34dac208173d1f5d85,
+        type: 3}
+      propertyPath: m_text
+      value: Station Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258852176914379834, guid: a81d77e822ec6e34dac208173d1f5d85,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 2401211603118706012, guid: a81d77e822ec6e34dac208173d1f5d85,
         type: 3}
       propertyPath: m_Name
       value: DianaPortrait
+      objectReference: {fileID: 0}
+    - target: {fileID: 3416196933518832208, guid: a81d77e822ec6e34dac208173d1f5d85,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3646955478681941567, guid: a81d77e822ec6e34dac208173d1f5d85,
         type: 3}
@@ -79,6 +94,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 075ab059abfc2c044b98a978ebfd19d7,
         type: 3}
+    - target: {fileID: 5500267931963374477, guid: a81d77e822ec6e34dac208173d1f5d85,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8629197289619668133, guid: a81d77e822ec6e34dac208173d1f5d85,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
