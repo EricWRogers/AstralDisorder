@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
 using OmnicatLabs.Extensions;
+using UnityEngine.InputSystem.LowLevel;
 
 public class ObjectInteraction : MonoBehaviour
 {
@@ -10,23 +11,44 @@ public class ObjectInteraction : MonoBehaviour
     public TextMeshProUGUI interactText;
 
     [SerializeField]
-    [Tooltip("This is the keybind for object interaction. You can change this here.")]
-    private KeyCode interactKey = KeyCode.E;
-
-    [SerializeField]
     [Tooltip("This is where you add the camera you want the raycast to fire from.")]
     private Camera camera;
 
     public float interactRange;
     public LayerMask interactableLayer;
     private string interactKeyName;
+    private int bindingIndex;
     private Interactable interactableObject;
 
     void Start()
     {
         SetInteractTextVisibility(false);
-        interactKeyName = OmnicatLabs.CharacterControllers.CharacterController.Instance.GetComponent<PlayerInput>().actions["Interact"].GetBindingDisplayString();
+        if (OmnicatLabs.CharacterControllers.CharacterController.Instance.GetComponent<PlayerInput>().currentControlScheme == "Controller")
+        {
+            bindingIndex = OmnicatLabs.CharacterControllers.CharacterController.Instance.GetComponent<PlayerInput>().actions["Interact"].GetBindingIndex(group: "Controller");
+        }
+        else
+        {
+            bindingIndex = OmnicatLabs.CharacterControllers.CharacterController.Instance.GetComponent<PlayerInput>().actions["Interact"].GetBindingIndex(group: "FPS MNK Controls");
+        }
+        interactKeyName = OmnicatLabs.CharacterControllers.CharacterController.Instance.GetComponent<PlayerInput>().actions["Interact"].GetBindingDisplayString(bindingIndex, out _, out _);
+
+        OmnicatLabs.CharacterControllers.CharacterController.Instance.GetComponent<PlayerInput>().controlsChangedEvent.AddListener(DeviceChanged);
     }
+
+    private void DeviceChanged(PlayerInput input)
+    {
+        if (OmnicatLabs.CharacterControllers.CharacterController.Instance.GetComponent<PlayerInput>().currentControlScheme == "Controller")
+        {
+            bindingIndex = OmnicatLabs.CharacterControllers.CharacterController.Instance.GetComponent<PlayerInput>().actions["Interact"].GetBindingIndex(group: "Controller");
+        }
+        else
+        {
+            bindingIndex = OmnicatLabs.CharacterControllers.CharacterController.Instance.GetComponent<PlayerInput>().actions["Interact"].GetBindingIndex(group: "FPS MNK Controls");
+        }
+        interactKeyName = OmnicatLabs.CharacterControllers.CharacterController.Instance.GetComponent<PlayerInput>().actions["Interact"].GetBindingDisplayString(bindingIndex, out _, out _);
+    }
+
 
     void Update()
     {
