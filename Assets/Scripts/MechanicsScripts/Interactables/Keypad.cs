@@ -13,6 +13,7 @@ public class Keypad : Interactable
         base.OnInteract();
 
         var go = Instantiate(keypadUI, canvas.transform);
+        go.GetComponent<KeypadUIController>().AdjustTimeScale();
         go.transform.SetAsLastSibling();
 
         if (door != null)
