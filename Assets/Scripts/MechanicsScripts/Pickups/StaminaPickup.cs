@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class StaminaPickup : Interactable
 {
-    public float normalStaminaValue = 10f;
-    public float easyStaminaValue = 20f;
-    public float hardStaminaValue = 6f;
-    public float extremeStaminaValue = 4f;
+    public float easyStaminaValue = 100f;
+    public float normalStaminaValue = 80f;
+    public float hardStaminaValue = 60f;
+    public float extremeStaminaValue = 40f;
 
     public override void OnInteract()
     {

@@ -30,11 +30,11 @@ public class KeypadUIController : MonoBehaviour
     private void Start()
     {
         guesses = correctPass.Length;
-        Debug.Log(correctPass);
+        //Debug.Log(correctPass);
         AdjustTimeScale(); // Set time scale initially
     }
 
-    private void AdjustTimeScale()
+    public void AdjustTimeScale()
     {
         // Get the DifficultySetting component from the GameManager
         DifficultySetting difficultySetting = FindObjectOfType<DifficultySetting>();
@@ -58,8 +58,6 @@ public class KeypadUIController : MonoBehaviour
                     Time.timeScale = 1.0f; // Default to Normal if unrecognized difficulty
                     break;
             }
-
-            lastTimeScale = Time.timeScale;
         }
         else
         {
@@ -69,7 +67,7 @@ public class KeypadUIController : MonoBehaviour
 
     private void ResetTimeScale()
     {
-        Time.timeScale = lastTimeScale;
+        Time.timeScale = 1.0f;
     }
 
     private void Update()
@@ -84,14 +82,7 @@ public class KeypadUIController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (Time.timeScale == 0f)
-            {
-                ResetTimeScale();
-            }
-            else
-            {
-                Time.timeScale = 0f;
-            }
+            ResetTimeScale();
         }
     }
 
@@ -115,7 +106,6 @@ public class KeypadUIController : MonoBehaviour
                 if (buttonCount == 4)
                 {
                     Submit();
-                    AdjustTimeScale();
                 }
             }
         }
@@ -129,6 +119,7 @@ public class KeypadUIController : MonoBehaviour
 
     private void Submit()
     {
+        ResetTimeScale();
         if (input != null)
         {
             if (input == correctPass)
@@ -189,7 +180,6 @@ public class KeypadUIController : MonoBehaviour
                 if (buttonCount == 4)
                 {
                     Submit();
-                    AdjustTimeScale();
                 }
                 break;
         }
@@ -197,6 +187,7 @@ public class KeypadUIController : MonoBehaviour
 
     public void Quit()
     {
+        ResetTimeScale();
         controller.ChangeState(controller.nullState);
     }
 }

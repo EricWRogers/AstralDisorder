@@ -1257,6 +1257,8 @@ GameObject:
   - component: {fileID: 2663900214268015334}
   - component: {fileID: 8399224915719807006}
   - component: {fileID: 2993984963616570827}
+  - component: {fileID: 386592822236272342}
+  - component: {fileID: 5703630940273076322}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1420,3 +1422,29 @@ MonoBehaviour:
         m_CallState: 2
   completeLight: {fileID: 0}
   lightColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &386592822236272342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7561090201023249777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 546e557c59bed834ca69db9c5ff071ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficultySetting: {fileID: 5703630940273076322}
+--- !u!114 &5703630940273076322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7561090201023249777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fe9a2274f064c4438a22e10311be827, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentDifficulty: 1
