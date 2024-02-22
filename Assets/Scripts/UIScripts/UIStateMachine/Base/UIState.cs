@@ -32,6 +32,7 @@ public class UIState : MonoBehaviour, IUIState
 
     public virtual void OnStateUpdate(UIStateMachineController controller)
     {
+        /*
         if (fullscreen)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
@@ -41,5 +42,6 @@ public class UIState : MonoBehaviour, IUIState
                 else controller.ChangeState(fullscreenExitState);
             }
         }
+        */
     }
 }
