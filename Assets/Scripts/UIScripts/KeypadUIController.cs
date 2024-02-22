@@ -32,6 +32,32 @@ public class KeypadUIController : MonoBehaviour
         //correctPass = FindObjectOfType<RandNumGen>().RandNum.ToString();
         guesses = correctPass.Length;
         Debug.Log(correctPass);
+
+        AdjustTimeScale();
+    }
+
+    public void AdjustTimeScale()
+    {
+        Difficulty? difficulty = FindObjectOfType<DifficultySetting>()?.currentDifficulty;
+
+        switch (difficulty)
+        {
+            case (Difficulty.Easy):
+                Time.timeScale = 0.0f;
+                break;
+            case (Difficulty.Normal):
+                Time.timeScale = 0.5f;
+                break;
+            case (Difficulty.Hard):
+                Time.timeScale = 1.0f;
+                break;
+            case (Difficulty.Extreme):
+                Time.timeScale = 1.0f;
+                break;
+            default:
+                Time.timeScale = 1.0f;
+                break;
+        }
     }
 
     public void ValueEntered(string valueEntered)
@@ -65,7 +91,8 @@ public class KeypadUIController : MonoBehaviour
     }
 
     public void Quit()
-    {       
+    {
+        Time.timeScale = 1.0f;
         controller.ChangeState(controller.nullState);
     }
 
@@ -78,6 +105,7 @@ public class KeypadUIController : MonoBehaviour
 
     public void Submit()
     {
+        Time.timeScale = 1.0f;
         if (input != null)
         {
             if (input == correctPass)
@@ -126,6 +154,7 @@ public class KeypadUIController : MonoBehaviour
 
     public void CloseMenu()
     {
+        Time.timeScale = 1.0f;
         keypadUI.SetActive(false);
     }
 
