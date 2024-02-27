@@ -4822,7 +4822,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 90.431015, y: -23}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &3281166139131890315
 CanvasRenderer:
@@ -9913,7 +9913,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0.49995422, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &6728972184307601593
 CanvasRenderer:
@@ -12030,7 +12030,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &8631345800123546929
 CanvasRenderer:
@@ -12126,6 +12126,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7251634251294724993}
+        m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
+        m_MethodName: ExitToMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7592074675953431813
 GameObject:
   m_ObjectHideFlags: 0
@@ -12136,7 +12148,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8883679882627331930}
   - component: {fileID: 2027231012320754689}
-  - component: {fileID: 6750268340297648706}
   m_Layer: 5
   m_Name: DisplaySettings
   m_TagString: Untagged
@@ -12176,26 +12187,6 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
---- !u!114 &6750268340297648706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7592074675953431813}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f1c370319aa1f14b80eb937c1b70e47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controller: {fileID: 0}
-  backButton: {fileID: 4492927354608479117}
-  audioReturnButton: {fileID: 4492927354608479117}
-  displayOptionsButton: {fileID: 6263005320715259412}
-  mainMenu: {fileID: 4056703949766977430}
-  displaySettingsMenu: {fileID: 2027231012320754689}
-  soundSettingsMenu: {fileID: 4096076059141454912}
-  pauseMenu: {fileID: 0}
 --- !u!1 &7668625287560246423
 GameObject:
   m_ObjectHideFlags: 0
