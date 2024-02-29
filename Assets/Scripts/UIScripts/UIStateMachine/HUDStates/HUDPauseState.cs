@@ -1,8 +1,16 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class HUDPauseState : UIState
 {
     public CanvasGroup pauseGroup;
+    private bool gameStarted = false;
+
+    private void PostPlay()
+    {
+        gameStarted = true;
+    }
+
     public override void OnStateEnter(UIStateMachineController controller)
     {
         base.OnStateEnter(controller);
@@ -24,5 +32,13 @@ public class HUDPauseState : UIState
         pauseGroup.blocksRaycasts = false;
         pauseGroup.alpha = 0f;
         Time.timeScale = 1f;
+    }
+
+    public void OnPause(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed && gameStarted)
+        {
+            FindObjectOfType<PauseMenu>().GetComponent<PauseMenu>().Resume();
+        }
     }
 }
