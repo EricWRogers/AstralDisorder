@@ -60,4 +60,22 @@ public class StaminaPickup : Interactable
 
         Destroy(gameObject.transform.parent.gameObject);
     }
+
+    // Function to get stamina value based on difficulty level
+    private float GetStaminaValue(Difficulty difficulty)
+    {
+        switch (difficulty)
+        {
+            case Difficulty.Easy:
+                return easyStaminaValue;
+            case Difficulty.Normal:
+                return normalStaminaValue;
+            case Difficulty.Hard:
+                return hardStaminaValue;
+            case Difficulty.Extreme:
+                return extremeStaminaValue;
+            default:
+                return normalStaminaValue; // Default to normal stamina value
+        }
+    }
 }

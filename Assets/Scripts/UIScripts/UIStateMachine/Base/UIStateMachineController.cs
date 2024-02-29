@@ -78,7 +78,7 @@ public class UIStateMachineController : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(state.GetType());
+        //Debug.Log(state.GetType());
         state.OnStateUpdate(this);
     }
 

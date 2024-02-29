@@ -11,6 +11,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        Time.timeScale = 1.0f;
         controller.ChangeState<HUDIdleState>();
         pauseMenuUI.alpha = 0f;
         pauseMenuUI.blocksRaycasts = false;

@@ -8,10 +8,35 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 351001743917606931, guid: a81d77e822ec6e34dac208173d1f5d85,
+        type: 3}
+      propertyPath: m_text
+      value: "Station Manager \nX\nX"
+      objectReference: {fileID: 0}
+    - target: {fileID: 351001743917606931, guid: a81d77e822ec6e34dac208173d1f5d85,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 351001743917606931, guid: a81d77e822ec6e34dac208173d1f5d85,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258852176914379834, guid: a81d77e822ec6e34dac208173d1f5d85,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 2401211603118706012, guid: a81d77e822ec6e34dac208173d1f5d85,
         type: 3}
       propertyPath: m_Name
       value: BrandonPortrait
+      objectReference: {fileID: 0}
+    - target: {fileID: 3416196933518832208, guid: a81d77e822ec6e34dac208173d1f5d85,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3646955478681941567, guid: a81d77e822ec6e34dac208173d1f5d85,
         type: 3}
@@ -72,6 +97,31 @@ PrefabInstance:
         type: 3}
       propertyPath: firstName
       value: Jimothy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5500267931963374477, guid: a81d77e822ec6e34dac208173d1f5d85,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8629197289619668133, guid: a81d77e822ec6e34dac208173d1f5d85,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -0.000000008381903
+      objectReference: {fileID: 0}
+    - target: {fileID: 8629197289619668133, guid: a81d77e822ec6e34dac208173d1f5d85,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8629197289619668133, guid: a81d77e822ec6e34dac208173d1f5d85,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.000035048
+      objectReference: {fileID: 0}
+    - target: {fileID: 8629197289619668133, guid: a81d77e822ec6e34dac208173d1f5d85,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

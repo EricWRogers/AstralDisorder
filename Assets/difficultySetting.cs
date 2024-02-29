@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public enum Difficulty
@@ -10,28 +8,15 @@ public enum Difficulty
     Extreme
 }
 
-public class GameManager : MonoBehaviour
+public class DifficultySetting : MonoBehaviour
 {
-    public static GameManager Instance { get; private set; }
-
     public Difficulty currentDifficulty = Difficulty.Normal;
+
+    // Any other properties or methods related to difficulty setting can be added here
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        // Ensure the GameManager persists between scenes
+        DontDestroyOnLoad(gameObject);
     }
-
-    public Difficulty GetDifficulty()
-    {
-        return currentDifficulty;
-    }
-
-    // Other methods and properties as needed
 }
