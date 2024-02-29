@@ -14,6 +14,7 @@ public class HUDPauseState : UIState
     public override void OnStateEnter(UIStateMachineController controller)
     {
         base.OnStateEnter(controller);
+        OmnicatLabs.CharacterControllers.CharacterController.Instance.SetControllerLocked(false, OmnicatLabs.CharacterControllers.CharacterController.Instance.playerIsHidden, true);
         pauseGroup.interactable = true;
         pauseGroup.blocksRaycasts = true;
         pauseGroup.alpha = 1f;
@@ -36,7 +37,7 @@ public class HUDPauseState : UIState
 
     public void OnPause(InputAction.CallbackContext ctx)
     {
-        if (ctx.performed && gameStarted)
+        if (ctx.performed && gameStarted && PauseMenu.GameIsPaused)
         {
             FindObjectOfType<PauseMenu>().GetComponent<PauseMenu>().Resume();
         }

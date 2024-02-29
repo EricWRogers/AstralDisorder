@@ -1,3 +1,4 @@
+using OmnicatLabs.CharacterControllers;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,11 +9,15 @@ public class PauseMenu : MonoBehaviour
     public CanvasGroup pauseMenuUI;
     public Slider sensitivitySlider;
     public UIStateMachineController controller;
+    public MouseLook mouseLook;
 
     public void Resume()
     {
         Time.timeScale = 1.0f;
         controller.ChangeState<HUDIdleState>();
+        GameIsPaused = false;
+        mouseLook.enabled = true;
+        OmnicatLabs.CharacterControllers.CharacterController.Instance.SetControllerLocked(false, false, false);
         pauseMenuUI.alpha = 0f;
         pauseMenuUI.blocksRaycasts = false;
         pauseMenuUI.interactable = false;

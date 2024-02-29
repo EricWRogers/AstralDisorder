@@ -1,9 +1,11 @@
+using OmnicatLabs.CharacterControllers;
 using UnityEngine.InputSystem;
 
 public class HUDIdleState : UINullState
 {
     private bool gameStarted = false;
     private UIStateMachineController inputController;
+    public MouseLook mouseLook;
     private void PostPlay()
     {
         gameStarted = true;
@@ -29,8 +31,10 @@ public class HUDIdleState : UINullState
 
     public void OnPause(InputAction.CallbackContext ctx)
     {
-        if (ctx.performed && gameStarted)
+        if (ctx.performed && gameStarted && !PauseMenu.GameIsPaused)
         {
+            PauseMenu.GameIsPaused = true;
+            mouseLook.enabled = false;
             inputController.ChangeState<HUDPauseState>();
         }
     }
