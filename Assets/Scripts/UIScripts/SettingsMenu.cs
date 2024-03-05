@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -97,7 +96,6 @@ public class SettingsMenu : MonoBehaviour
         soundSettingsMenu.interactable = false;
 
         //GetComponentInChildren<Slider>().interactable = false;
-
     }
 
     public void Exit()
@@ -120,7 +118,5 @@ public class SettingsMenu : MonoBehaviour
         pauseMenu.blocksRaycasts = true;
 
        // GetComponentInChildren<Slider>().interactable = false;
-
     }
-    
 }
