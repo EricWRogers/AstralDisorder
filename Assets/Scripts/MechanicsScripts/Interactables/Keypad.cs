@@ -26,8 +26,38 @@ public class Keypad : Interactable
 
         uiController.ChangeState<HUDKeypadState>();
 
+        // Depending on difficulty level, adjust time manipulation
+        switch (difficultyLevel)
+        {
+            case DifficultyLevel.Easy:
+                FreezeTime();
+                break;
+
+            case DifficultyLevel.Normal:
+                SlowDownTime();
+                break;
+
+            case DifficultyLevel.Hard:
+                // No time change on harder difficulty
+                break;
+          
+            case DifficultyLevel.Extreme:
+                //no time change
+                break;
+        }
+
         OmnicatLabs.CharacterControllers.CharacterController.Instance.SetControllerLocked(true, OmnicatLabs.CharacterControllers.CharacterController.Instance.playerIsHidden, true);
     }
+
+    // Add your time manipulation methods here
+    private void FreezeTime()
+    {
+        Time.timeScale = 0;
+    }
+
+    private void SlowDownTime()
+    {
+        Time.timeScale = 0.4f;    }
 
     protected override void OnHover()
     {
