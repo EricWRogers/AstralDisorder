@@ -15,7 +15,10 @@ public class GrapplePoint : MonoBehaviour
     public Image scalingImage;
     [Tooltip("Describes what layers are affected by the raycast that checks whether the player is valid to grapple")]
     public LayerMask validObstaceFilter;
+    public UIStateMachineController tutorialStateMachine;
 
+    private bool firstTime1 = true;
+    private bool firstTime2 = true;
     private OmnicatLabs.CharacterControllers.CharacterController player;
 
     private void Start()
@@ -44,6 +47,10 @@ public class GrapplePoint : MonoBehaviour
             if (Vector3.Distance(transform.position, player.transform.position) <= hideDistance)
             {
                 toggleObject.SetActive(false);
+                if (!firstTime1 && !firstTime2)
+                {
+                    tutorialStateMachine.ChangeState(tutorialStateMachine.nullState);
+                }
             }
             else if (scalingImage.GetComponent<RectTransform>().localScale == minScale)
             {
@@ -55,6 +62,11 @@ public class GrapplePoint : MonoBehaviour
                 {
                     toggleObject.SetActive(true);
                     scalingImage.color = Color.green;
+                    if (firstTime2 && tutorialStateMachine != null)
+                    {
+                        firstTime2 = false;
+                        tutorialStateMachine.ChangeState<TutorialSecondaryGrappleState>();
+                    }
                 }
                 else
                 {
@@ -63,6 +75,11 @@ public class GrapplePoint : MonoBehaviour
             }
             else
             {
+                if (firstTime1 && tutorialStateMachine != null)
+                {
+                    firstTime1 = false;
+                    tutorialStateMachine.ChangeState<TutorialGrappleState>();
+                }
                 toggleObject.SetActive(true);
                 scalingImage.color = Color.white;
             }

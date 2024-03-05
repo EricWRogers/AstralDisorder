@@ -1,6 +1,7 @@
 using OmnicatLabs.CharacterControllers;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -11,16 +12,32 @@ public class PauseMenu : MonoBehaviour
     public UIStateMachineController controller;
     public MouseLook mouseLook;
 
+    public static PauseMenu Instance;
+    private bool gameStarted = false;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
+
+    private void PostPlay()
+    {
+        gameStarted = true;
+    }
+
     public void Resume()
     {
         Time.timeScale = 1.0f;
         controller.ChangeState<HUDIdleState>();
-        GameIsPaused = false;
-        mouseLook.enabled = true;
-        OmnicatLabs.CharacterControllers.CharacterController.Instance.SetControllerLocked(false, false, false);
+        mouseLook.Unlock();
+        OmnicatLabs.CharacterControllers.CharacterController.Instance.TogglePause();
         pauseMenuUI.alpha = 0f;
         pauseMenuUI.blocksRaycasts = false;
         pauseMenuUI.interactable = false;
+        GameIsPaused = false;
     }
 
     public void Settings()
@@ -31,6 +48,27 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.interactable = false;
 
         sensitivitySlider.interactable = true;
+    }
+
+    public void Pause(InputAction.CallbackContext ctx)
+    {
+        Debug.Log(gameStarted);
+        if (ctx.performed && gameStarted)
+        {
+            if (GameIsPaused)
+            {
+                Debug.Log($"Paused States: {GameIsPaused}");
+                Resume();
+            }
+            else
+            {
+                Debug.Log($"Paused States: {GameIsPaused}");
+                GameIsPaused = true;
+                mouseLook.Lock();
+                OmnicatLabs.CharacterControllers.CharacterController.Instance.TogglePause();
+                controller.ChangeState<HUDPauseState>();
+            }
+        }
     }
 
     public void QuitGame()

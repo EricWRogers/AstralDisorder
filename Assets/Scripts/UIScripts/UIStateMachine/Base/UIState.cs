@@ -12,16 +12,16 @@ public class UIState : MonoBehaviour, IUIState
 
     public virtual void OnStateEnter(UIStateMachineController controller)
     {
-        if (fullscreen)
-            OmnicatLabs.CharacterControllers.CharacterController.Instance.SetControllerLocked(true, OmnicatLabs.CharacterControllers.CharacterController.Instance.playerIsHidden, true);
+        //if (fullscreen)
+        //    OmnicatLabs.CharacterControllers.CharacterController.Instance.SetControllerLocked(true, OmnicatLabs.CharacterControllers.CharacterController.Instance.playerIsHidden, true);
     }
 
     public virtual void OnStateExit(UIStateMachineController controller)
     {
-        if (fullscreen)
-        {
-            OmnicatLabs.CharacterControllers.CharacterController.Instance.SetControllerLocked(false, OmnicatLabs.CharacterControllers.CharacterController.Instance.playerIsHidden, false);
-        }
+        //if (fullscreen)
+        //{
+        //    OmnicatLabs.CharacterControllers.CharacterController.Instance.SetControllerLocked(false, OmnicatLabs.CharacterControllers.CharacterController.Instance.playerIsHidden, false);
+        //}
             
     }
 

@@ -1,5 +1,6 @@
 using OmnicatLabs.CharacterControllers;
 using UnityEngine.InputSystem;
+using UnityEngine;
 
 public class HUDIdleState : UINullState
 {
@@ -29,13 +30,14 @@ public class HUDIdleState : UINullState
         */
     }
 
-    public void OnPause(InputAction.CallbackContext ctx)
-    {
-        if (ctx.performed && gameStarted && !PauseMenu.GameIsPaused)
-        {
-            PauseMenu.GameIsPaused = true;
-            mouseLook.enabled = false;
-            inputController.ChangeState<HUDPauseState>();
-        }
-    }
+    //public void OnPause(InputAction.CallbackContext ctx)
+    //{
+    //    if (ctx.performed) Debug.Log($"Paused Before: {PauseMenu.GameIsPaused}");
+    //    if (ctx.performed && gameStarted && !PauseMenu.GameIsPaused)
+    //    {
+    //        PauseMenu.GameIsPaused = true;
+    //        OmnicatLabs.CharacterControllers.CharacterController.Instance.SetControllerLocked(true, OmnicatLabs.CharacterControllers.CharacterController.Instance.playerIsHidden, true);
+    //        inputController.ChangeState<HUDPauseState>();
+    //    }
+    //}
 }

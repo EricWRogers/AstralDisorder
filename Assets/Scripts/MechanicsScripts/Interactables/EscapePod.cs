@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using OmnicatLabs.Tween;
+using OmnicatLabs.Audio;
 
 public class EscapePod : MonoBehaviour
 {
@@ -22,7 +23,10 @@ public class EscapePod : MonoBehaviour
 
     private void Launch()
     {
+        AudioManager.Instance.Stop("SpaceAmbience");
+        AudioManager.Instance.Stop("MechanicalAmbience");
         shaker.CauseShake();
+        AudioManager.Instance.Play("EscapePodLaunch");
         shaker.onShakeFinish.AddListener(Unfurl);
         transform.position = new Vector3(transform.position.x, transform.position.y + 50f, transform.position.z);
         OmnicatLabs.CharacterControllers.CharacterController.Instance.transform.position = landing.position;
@@ -32,7 +36,9 @@ public class EscapePod : MonoBehaviour
     private void Unfurl()
     {
         unfurl = true;
+        AudioManager.Instance.Stop("EscapePodLaunch");
         credits.SetTrigger("Win");
+        AudioManager.Instance.Play("CreditsBGM");
     }
 
     private void Update()
