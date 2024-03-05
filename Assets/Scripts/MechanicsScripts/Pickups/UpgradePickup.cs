@@ -36,9 +36,11 @@ public class UpgradePickup : Interactable
                 UpgradeManager.AddToOwned(UpgradeIds.MagBoots);
                 break;
             case UpgradeIds.WallRunning:
+                OmnicatLabs.CharacterControllers.CharacterController.Instance.wallRunningUnlocked = true;
                 UpgradeManager.AddToOwned(UpgradeIds.WallRunning);
                 break;
             case UpgradeIds.Grapple:
+                OmnicatLabs.CharacterControllers.CharacterController.Instance.grappleUnlocked = true;
                 UpgradeManager.AddToOwned(UpgradeIds.Grapple);
                 break;
             case UpgradeIds.DoubleJump:
