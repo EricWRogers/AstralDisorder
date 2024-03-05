@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Keypad : Interactable
 {
@@ -22,6 +23,7 @@ public class Keypad : Interactable
             go.GetComponent<KeypadUIController>().correctPass = codeGenerator.RandNum;
             go.GetComponent<KeypadUIController>().controller = uiController;
             go.GetComponent<KeypadUIController>().onCorrectPassword.AddListener(door.Open);
+            go.transform.GetChild(1).transform.GetChild(0).GetComponent<Button>().Select();
         }
 
         uiController.ChangeState<HUDKeypadState>();
