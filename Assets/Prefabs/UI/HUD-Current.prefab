@@ -6037,6 +6037,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1929213196164271262}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+        m_MethodName: Select
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4014130349255493317
 GameObject:
   m_ObjectHideFlags: 0
@@ -9819,6 +9831,7 @@ GameObject:
   - component: {fileID: 9179587053711604460}
   - component: {fileID: 6035473534199598636}
   - component: {fileID: 7317173882818200295}
+  - component: {fileID: 4203620772128986853}
   m_Layer: 5
   m_Name: PauseMenu
   m_TagString: Untagged
@@ -9863,7 +9876,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeTime: 0.3
   pauseMenuUI: {fileID: 7317173882818200295}
-  sensitivitySlider: {fileID: 0}
+  sensitivitySlider: {fileID: 8801846576694862872}
   controller: {fileID: 0}
   mouseLook: {fileID: 0}
   defaultButton: {fileID: 1733899161480583231}
@@ -9879,6 +9892,21 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!114 &4203620772128986853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6032073507987293865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad2f2201e0162dc4ca30e43312d7d718, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameStarted: 0
+  playButton: {fileID: 4136573975838624693}
+  resumeButton: {fileID: 1733899161480583231}
 --- !u!1 &6057390079350095455
 GameObject:
   m_ObjectHideFlags: 0
@@ -12116,9 +12144,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4136573975838624693}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
-        m_MethodName: Select
+      - m_Target: {fileID: 7251634251294724993}
+        m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
+        m_MethodName: ExitToMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12128,9 +12156,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 7251634251294724993}
-        m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
-        m_MethodName: ExitToMainMenu
+      - m_Target: {fileID: 4203620772128986853}
+        m_TargetAssemblyTypeName: IfPauseUICheck, Assembly-CSharp
+        m_MethodName: StartCheck
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
