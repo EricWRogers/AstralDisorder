@@ -11,6 +11,7 @@ public class PauseMenu : MonoBehaviour
     public Slider sensitivitySlider;
     public UIStateMachineController controller;
     public MouseLook mouseLook;
+    public Button defaultButton;
 
     public static PauseMenu Instance;
     private bool gameStarted = false;
@@ -52,21 +53,19 @@ public class PauseMenu : MonoBehaviour
 
     public void Pause(InputAction.CallbackContext ctx)
     {
-        Debug.Log(gameStarted);
         if (ctx.performed && gameStarted)
         {
             if (GameIsPaused)
             {
-                Debug.Log($"Paused States: {GameIsPaused}");
                 Resume();
             }
             else
             {
-                Debug.Log($"Paused States: {GameIsPaused}");
                 GameIsPaused = true;
                 mouseLook.Lock();
                 OmnicatLabs.CharacterControllers.CharacterController.Instance.TogglePause();
                 controller.ChangeState<HUDPauseState>();
+                defaultButton.Select();
             }
         }
     }
