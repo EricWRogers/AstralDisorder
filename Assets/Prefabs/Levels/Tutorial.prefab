@@ -368,7 +368,7 @@ GameObject:
   - component: {fileID: 3642798091736865762}
   - component: {fileID: 6806830446362239881}
   - component: {fileID: 5575862604896177786}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: ControlStationSideHallwayWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2347,7 +2347,7 @@ GameObject:
   - component: {fileID: 6704779514403589009}
   - component: {fileID: 3453798550249713999}
   - component: {fileID: 4404317798546626690}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__wall9 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15636,7 +15636,7 @@ GameObject:
   - component: {fileID: 4261034232771001816}
   - component: {fileID: 81803538702675506}
   - component: {fileID: 4311838541566817809}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__wall9 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16106,7 +16106,7 @@ GameObject:
   - component: {fileID: 3851182740081314343}
   - component: {fileID: 5275318958275190237}
   - component: {fileID: 3207771073873647054}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: MaintenenceRoomHallwayWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17755,7 +17755,7 @@ GameObject:
   - component: {fileID: 3118519696461777953}
   - component: {fileID: 8670560884346276796}
   - component: {fileID: 1740537725700652599}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: VentSideMaintenenceRoomWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20036,7 +20036,7 @@ GameObject:
   - component: {fileID: 4475889366428337964}
   - component: {fileID: 2222602543042527894}
   - component: {fileID: 8956738526360159038}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: MaintenenceRoomOppositeHallwayWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20636,7 +20636,7 @@ GameObject:
   - component: {fileID: 6524093600791127563}
   - component: {fileID: 4803568405249989581}
   - component: {fileID: 3085772541761215272}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: pasted__wall9 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21769,7 +21769,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 618989333216644722}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21905,7 +21905,7 @@ GameObject:
   - component: {fileID: 1162477893781683941}
   - component: {fileID: 331487041125677004}
   - component: {fileID: 4203364911231427940}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: OfficeSideHallwayWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25537,7 +25537,7 @@ GameObject:
   - component: {fileID: 1947048969714427398}
   - component: {fileID: 7145564405727204603}
   - component: {fileID: 7695087897968313509}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: FarHallwayWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30486,7 +30486,7 @@ GameObject:
   - component: {fileID: 9085594643354930428}
   - component: {fileID: 6250006375199964710}
   - component: {fileID: 7441433836217582493}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: VentMaintenenceRoomSideWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31432,7 +31432,7 @@ GameObject:
   - component: {fileID: 2471185972154959205}
   - component: {fileID: 5563273100796015768}
   - component: {fileID: 1731842084147171834}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: MaintenenceRoomOppositeVentWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33236,7 +33236,7 @@ GameObject:
   - component: {fileID: 9166390505237211400}
   - component: {fileID: 6157560397562316392}
   - component: {fileID: 6966258012267892468}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: VentHallwaySideWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34403,6 +34403,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallSliverTrimCover
       objectReference: {fileID: 0}
+    - target: {fileID: 4968172211988967930, guid: c53a4bb538ac125428fe81a700b2c264,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6544956304831300696, guid: c53a4bb538ac125428fe81a700b2c264, type: 3}
     m_RemovedGameObjects: []
@@ -34478,6 +34483,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallDoorway (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3157224854467423391, guid: f57466acba95d08488a4cb4ad5173858,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -34501,6 +34511,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallnoTrim (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1641556762998437128, guid: 7a6cabbc5bc3bb144947efa100114f93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2129124557487419314, guid: 7a6cabbc5bc3bb144947efa100114f93,
         type: 3}
@@ -34551,6 +34566,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6706791578459266295, guid: 7a6cabbc5bc3bb144947efa100114f93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -35388,6 +35408,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1578661415986752124, guid: d7fc52a7fc5c8af45a7ae90342fbdb6f,
         type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1578661415986752124, guid: d7fc52a7fc5c8af45a7ae90342fbdb6f,
+        type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -35517,6 +35542,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5202355690582720430, guid: f2696913c764f7e4b99390f22a8fd512,
         type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202355690582720430, guid: f2696913c764f7e4b99390f22a8fd512,
+        type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -35594,6 +35624,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallSmallPipe (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7624108522697655962, guid: 59648d2c6121a4643b2bddec87aa7c6a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -35617,6 +35652,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallnoTrim (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1641556762998437128, guid: 7a6cabbc5bc3bb144947efa100114f93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2129124557487419314, guid: 7a6cabbc5bc3bb144947efa100114f93,
         type: 3}
@@ -35668,6 +35708,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6706791578459266295, guid: 7a6cabbc5bc3bb144947efa100114f93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -35695,6 +35740,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallPipe (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3469647294209700029, guid: 6d2e5026f36b8e44c8de83f2e76280af,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4282212378511403527, guid: 6d2e5026f36b8e44c8de83f2e76280af,
         type: 3}
@@ -36380,6 +36430,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallnoTrim (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 1641556762998437128, guid: 7a6cabbc5bc3bb144947efa100114f93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 2129124557487419314, guid: 7a6cabbc5bc3bb144947efa100114f93,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -36429,6 +36484,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6706791578459266295, guid: 7a6cabbc5bc3bb144947efa100114f93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -36597,6 +36657,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallSmallPipe
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624108522697655962, guid: 59648d2c6121a4643b2bddec87aa7c6a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7624108522697655962, guid: 59648d2c6121a4643b2bddec87aa7c6a,
         type: 3}
@@ -37638,6 +37703,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4968172211988967930, guid: c53a4bb538ac125428fe81a700b2c264,
         type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4968172211988967930, guid: c53a4bb538ac125428fe81a700b2c264,
+        type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -37844,6 +37914,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallnoTrim (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1641556762998437128, guid: 7a6cabbc5bc3bb144947efa100114f93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 2129124557487419314, guid: 7a6cabbc5bc3bb144947efa100114f93,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -37908,6 +37983,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.634
+      objectReference: {fileID: 0}
+    - target: {fileID: 6706791578459266295, guid: 7a6cabbc5bc3bb144947efa100114f93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -38621,6 +38701,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallSliverTrimCover
       objectReference: {fileID: 0}
+    - target: {fileID: 4968172211988967930, guid: c53a4bb538ac125428fe81a700b2c264,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6544956304831300696, guid: c53a4bb538ac125428fe81a700b2c264, type: 3}
     m_RemovedGameObjects: []
@@ -38645,6 +38730,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallnoTrim (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1641556762998437128, guid: 7a6cabbc5bc3bb144947efa100114f93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2129124557487419314, guid: 7a6cabbc5bc3bb144947efa100114f93,
         type: 3}
@@ -38710,6 +38800,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.634
+      objectReference: {fileID: 0}
+    - target: {fileID: 6706791578459266295, guid: 7a6cabbc5bc3bb144947efa100114f93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -39219,6 +39314,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallPipeValve
       objectReference: {fileID: 0}
+    - target: {fileID: 7881353130516199094, guid: d13406376ecc0934b9313f863cd5db07,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -39297,6 +39397,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallSliver (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134480202349558247, guid: 23903f5398a507647a77adaa58f661fa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1494781434688018482, guid: 23903f5398a507647a77adaa58f661fa,
         type: 3}
@@ -39400,6 +39505,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallPipe (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3469647294209700029, guid: 6d2e5026f36b8e44c8de83f2e76280af,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4282212378511403527, guid: 6d2e5026f36b8e44c8de83f2e76280af,
         type: 3}
@@ -39524,6 +39634,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallSmallPipe (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624108522697655962, guid: 59648d2c6121a4643b2bddec87aa7c6a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7624108522697655962, guid: 59648d2c6121a4643b2bddec87aa7c6a,
         type: 3}
@@ -40082,6 +40197,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 600608713297870207, guid: f049cfca8e92e544ab9100ccc0c4c7a8,
         type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 600608713297870207, guid: f049cfca8e92e544ab9100ccc0c4c7a8,
+        type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -40253,6 +40373,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallSliver (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 1134480202349558247, guid: 23903f5398a507647a77adaa58f661fa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 1494781434688018482, guid: 23903f5398a507647a77adaa58f661fa,
         type: 3}
       propertyPath: m_SelectedEditorRenderState
@@ -40356,6 +40481,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallnoTrim (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 1641556762998437128, guid: 7a6cabbc5bc3bb144947efa100114f93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 2129124557487419314, guid: 7a6cabbc5bc3bb144947efa100114f93,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -40405,6 +40535,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6706791578459266295, guid: 7a6cabbc5bc3bb144947efa100114f93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -40564,6 +40699,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallnoTrim (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 1641556762998437128, guid: 7a6cabbc5bc3bb144947efa100114f93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 2129124557487419314, guid: 7a6cabbc5bc3bb144947efa100114f93,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -40614,6 +40754,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6706791578459266295, guid: 7a6cabbc5bc3bb144947efa100114f93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -40637,6 +40782,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallnoTrim
+      objectReference: {fileID: 0}
+    - target: {fileID: 1641556762998437128, guid: 7a6cabbc5bc3bb144947efa100114f93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2129124557487419314, guid: 7a6cabbc5bc3bb144947efa100114f93,
         type: 3}
@@ -40688,6 +40838,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6706791578459266295, guid: 7a6cabbc5bc3bb144947efa100114f93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -40711,6 +40866,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallnoTrim (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1641556762998437128, guid: 7a6cabbc5bc3bb144947efa100114f93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2129124557487419314, guid: 7a6cabbc5bc3bb144947efa100114f93,
         type: 3}
@@ -40761,6 +40921,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6706791578459266295, guid: 7a6cabbc5bc3bb144947efa100114f93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -40949,6 +41114,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallPipeValve2 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1578661415986752124, guid: d7fc52a7fc5c8af45a7ae90342fbdb6f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 2207705673711562950, guid: d7fc52a7fc5c8af45a7ae90342fbdb6f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -41072,6 +41242,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallSmallPipe (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624108522697655962, guid: 59648d2c6121a4643b2bddec87aa7c6a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -41240,6 +41415,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallPipeValve2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1578661415986752124, guid: d7fc52a7fc5c8af45a7ae90342fbdb6f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1578661415986752124, guid: d7fc52a7fc5c8af45a7ae90342fbdb6f,
         type: 3}
@@ -41671,6 +41851,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallnoTrim (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 1641556762998437128, guid: 7a6cabbc5bc3bb144947efa100114f93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 2129124557487419314, guid: 7a6cabbc5bc3bb144947efa100114f93,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -41720,6 +41905,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6706791578459266295, guid: 7a6cabbc5bc3bb144947efa100114f93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -42366,6 +42556,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallnoTrim (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 1641556762998437128, guid: 7a6cabbc5bc3bb144947efa100114f93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 2129124557487419314, guid: 7a6cabbc5bc3bb144947efa100114f93,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -42426,6 +42621,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.6360132
       objectReference: {fileID: 0}
+    - target: {fileID: 6706791578459266295, guid: 7a6cabbc5bc3bb144947efa100114f93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -42449,6 +42649,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallnoTrim (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1641556762998437128, guid: 7a6cabbc5bc3bb144947efa100114f93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2129124557487419314, guid: 7a6cabbc5bc3bb144947efa100114f93,
         type: 3}
@@ -42510,6 +42715,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.6360132
       objectReference: {fileID: 0}
+    - target: {fileID: 6706791578459266295, guid: 7a6cabbc5bc3bb144947efa100114f93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -42533,6 +42743,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallnoTrim (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1641556762998437128, guid: 7a6cabbc5bc3bb144947efa100114f93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2129124557487419314, guid: 7a6cabbc5bc3bb144947efa100114f93,
         type: 3}
@@ -42584,6 +42799,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6706791578459266295, guid: 7a6cabbc5bc3bb144947efa100114f93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -42615,6 +42835,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallPipeValve2 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1578661415986752124, guid: d7fc52a7fc5c8af45a7ae90342fbdb6f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2207705673711562950, guid: d7fc52a7fc5c8af45a7ae90342fbdb6f,
         type: 3}
@@ -42769,6 +42994,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallnoTrim (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1641556762998437128, guid: 7a6cabbc5bc3bb144947efa100114f93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 2129124557487419314, guid: 7a6cabbc5bc3bb144947efa100114f93,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -42818,6 +43048,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6706791578459266295, guid: 7a6cabbc5bc3bb144947efa100114f93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -43136,6 +43371,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallBigPipeValve (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 600608713297870207, guid: f049cfca8e92e544ab9100ccc0c4c7a8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -43159,6 +43399,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallPipeValve2 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1578661415986752124, guid: d7fc52a7fc5c8af45a7ae90342fbdb6f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2207705673711562950, guid: d7fc52a7fc5c8af45a7ae90342fbdb6f,
         type: 3}
@@ -43462,6 +43707,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallSliver (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1134480202349558247, guid: 23903f5398a507647a77adaa58f661fa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 1494781434688018482, guid: 23903f5398a507647a77adaa58f661fa,
         type: 3}
       propertyPath: m_SelectedEditorRenderState
@@ -43571,6 +43821,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallnoTrim (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 1641556762998437128, guid: 7a6cabbc5bc3bb144947efa100114f93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 2129124557487419314, guid: 7a6cabbc5bc3bb144947efa100114f93,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -43620,6 +43875,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6706791578459266295, guid: 7a6cabbc5bc3bb144947efa100114f93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -43857,6 +44117,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallCorner (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202355690582720430, guid: f2696913c764f7e4b99390f22a8fd512,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5202355690582720430, guid: f2696913c764f7e4b99390f22a8fd512,
         type: 3}
@@ -44822,6 +45087,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallSliverTrimCover
       objectReference: {fileID: 0}
+    - target: {fileID: 4968172211988967930, guid: c53a4bb538ac125428fe81a700b2c264,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6544956304831300696, guid: c53a4bb538ac125428fe81a700b2c264, type: 3}
     m_RemovedGameObjects: []
@@ -44846,6 +45116,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallnoTrim (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1641556762998437128, guid: 7a6cabbc5bc3bb144947efa100114f93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2129124557487419314, guid: 7a6cabbc5bc3bb144947efa100114f93,
         type: 3}
@@ -44896,6 +45171,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6706791578459266295, guid: 7a6cabbc5bc3bb144947efa100114f93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -45065,6 +45345,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallBigPipeValve (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 600608713297870207, guid: f049cfca8e92e544ab9100ccc0c4c7a8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -45169,6 +45454,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallnoTrim (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1641556762998437128, guid: 7a6cabbc5bc3bb144947efa100114f93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 2129124557487419314, guid: 7a6cabbc5bc3bb144947efa100114f93,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -45233,6 +45523,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.634
+      objectReference: {fileID: 0}
+    - target: {fileID: 6706791578459266295, guid: 7a6cabbc5bc3bb144947efa100114f93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -45515,6 +45810,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallnoTrim
       objectReference: {fileID: 0}
+    - target: {fileID: 1641556762998437128, guid: 7a6cabbc5bc3bb144947efa100114f93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 2129124557487419314, guid: 7a6cabbc5bc3bb144947efa100114f93,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -45564,6 +45864,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6706791578459266295, guid: 7a6cabbc5bc3bb144947efa100114f93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -45643,6 +45948,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallSliver (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134480202349558247, guid: 23903f5398a507647a77adaa58f661fa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1494781434688018482, guid: 23903f5398a507647a77adaa58f661fa,
         type: 3}
@@ -46000,6 +46310,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallCorner (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5202355690582720430, guid: f2696913c764f7e4b99390f22a8fd512,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -46023,6 +46338,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallnoTrim (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1641556762998437128, guid: 7a6cabbc5bc3bb144947efa100114f93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2129124557487419314, guid: 7a6cabbc5bc3bb144947efa100114f93,
         type: 3}
@@ -46088,6 +46408,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.634
+      objectReference: {fileID: 0}
+    - target: {fileID: 6706791578459266295, guid: 7a6cabbc5bc3bb144947efa100114f93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -46191,6 +46516,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallPipeValve2 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1578661415986752124, guid: d7fc52a7fc5c8af45a7ae90342fbdb6f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2207705673711562950, guid: d7fc52a7fc5c8af45a7ae90342fbdb6f,
         type: 3}
@@ -46518,6 +46848,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallnoTrim (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 1641556762998437128, guid: 7a6cabbc5bc3bb144947efa100114f93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 2129124557487419314, guid: 7a6cabbc5bc3bb144947efa100114f93,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -46568,6 +46903,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6706791578459266295, guid: 7a6cabbc5bc3bb144947efa100114f93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -46591,6 +46931,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallPipe
+      objectReference: {fileID: 0}
+    - target: {fileID: 3469647294209700029, guid: 6d2e5026f36b8e44c8de83f2e76280af,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4282212378511403527, guid: 6d2e5026f36b8e44c8de83f2e76280af,
         type: 3}
@@ -46716,6 +47061,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallSmallPipe (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 7624108522697655962, guid: 59648d2c6121a4643b2bddec87aa7c6a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -46739,6 +47089,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallnoTrim (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1641556762998437128, guid: 7a6cabbc5bc3bb144947efa100114f93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2129124557487419314, guid: 7a6cabbc5bc3bb144947efa100114f93,
         type: 3}
@@ -46789,6 +47144,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6706791578459266295, guid: 7a6cabbc5bc3bb144947efa100114f93,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -47050,6 +47410,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1134480202349558247, guid: 23903f5398a507647a77adaa58f661fa,
         type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134480202349558247, guid: 23903f5398a507647a77adaa58f661fa,
+        type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -47136,6 +47501,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallSliver (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134480202349558247, guid: 23903f5398a507647a77adaa58f661fa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1494781434688018482, guid: 23903f5398a507647a77adaa58f661fa,
         type: 3}
@@ -47404,6 +47774,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallSliver (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1134480202349558247, guid: 23903f5398a507647a77adaa58f661fa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 1494781434688018482, guid: 23903f5398a507647a77adaa58f661fa,
         type: 3}
       propertyPath: m_SelectedEditorRenderState
@@ -47482,6 +47857,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallSmallPipe (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624108522697655962, guid: 59648d2c6121a4643b2bddec87aa7c6a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -47650,6 +48030,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallSliver
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134480202349558247, guid: 23903f5398a507647a77adaa58f661fa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1134480202349558247, guid: 23903f5398a507647a77adaa58f661fa,
         type: 3}
@@ -47984,6 +48369,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1134480202349558247, guid: 23903f5398a507647a77adaa58f661fa,
         type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134480202349558247, guid: 23903f5398a507647a77adaa58f661fa,
+        type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -48110,6 +48500,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallPipe (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3469647294209700029, guid: 6d2e5026f36b8e44c8de83f2e76280af,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4282212378511403527, guid: 6d2e5026f36b8e44c8de83f2e76280af,
         type: 3}
@@ -48743,6 +49138,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WallDoorway
+      objectReference: {fileID: 0}
+    - target: {fileID: 3157224854467423391, guid: f57466acba95d08488a4cb4ad5173858,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3157224854467423391, guid: f57466acba95d08488a4cb4ad5173858,
         type: 3}
