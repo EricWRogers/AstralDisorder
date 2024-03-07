@@ -81,7 +81,7 @@ public class SettingsMenu : MonoBehaviour
         Debug.Log("Opening Audio Settings Menu");
     }
 
-        public void ExitToMainMenu()
+    public void ExitToMainMenu()
     {
         mainMenu.alpha = 1f;
         displaySettingsMenu.alpha = 0f;
