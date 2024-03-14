@@ -33,8 +33,9 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1.0f;
         controller.ChangeState<HUDIdleState>();
-        mouseLook.Unlock();
-        OmnicatLabs.CharacterControllers.CharacterController.Instance.TogglePause();
+        //mouseLook.Unlock();
+        //OmnicatLabs.CharacterControllers.CharacterController.Instance.TogglePause();
+        OmnicatLabs.CharacterControllers.CharacterController.Instance.SetLockedNoDisable(false, OmnicatLabs.CharacterControllers.CharacterController.Instance.playerIsHidden, false);
         pauseMenuUI.alpha = 0f;
         pauseMenuUI.blocksRaycasts = false;
         pauseMenuUI.interactable = false;
@@ -62,10 +63,9 @@ public class PauseMenu : MonoBehaviour
             else
             {
                 GameIsPaused = true;
-                mouseLook.Lock();
-                OmnicatLabs.CharacterControllers.CharacterController.Instance.TogglePause();
+                OmnicatLabs.CharacterControllers.CharacterController.Instance.SetLockedNoDisable(true, OmnicatLabs.CharacterControllers.CharacterController.Instance.playerIsHidden, true);
                 controller.ChangeState<HUDPauseState>();
-                defaultButton.Select();
+                DefaultSelectionController.Instance.ChangeSelection(defaultButton);
             }
         }
     }
