@@ -2,7 +2,7 @@ using OmnicatLabs.CharacterControllers;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
-
+using UnityEngine.EventSystems;
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
@@ -40,6 +40,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.blocksRaycasts = false;
         pauseMenuUI.interactable = false;
         GameIsPaused = false;
+        DefaultSelectionController.Instance.ClearSelection();
     }
 
     public void Settings()

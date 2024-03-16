@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class TutorialGrappleState : UITextState
+public class TutorialGrappleState : UITutorialTextState
 {
 
 }

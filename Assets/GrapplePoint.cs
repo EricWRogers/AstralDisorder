@@ -63,6 +63,7 @@ public class GrapplePoint : MonoBehaviour
                 {
                     toggleObject.SetActive(true);
                     scalingImage.color = Color.green;
+                    col.enabled = true;
                     if (firstTime2 && tutorialStateMachine != null)
                     {
                         firstTime2 = false;

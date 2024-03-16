@@ -3,6 +3,13 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
+public enum ControlSchemes
+{
+    MNK,
+    Controller
+}
+
+
 public class DefaultSelectionController : MonoBehaviour
 {
     public Selectable firstDefaultSelection;
@@ -10,6 +17,8 @@ public class DefaultSelectionController : MonoBehaviour
     public static DefaultSelectionController Instance;
     private EventSystem es;
     private Selectable selection;
+
+    public static ControlSchemes currentControlScheme;
 
     private void Awake()
     {
@@ -35,6 +44,7 @@ public class DefaultSelectionController : MonoBehaviour
     {
         if (OmnicatLabs.CharacterControllers.CharacterController.Instance.GetComponent<PlayerInput>().currentControlScheme == "Controller")
         {
+            currentControlScheme = ControlSchemes.Controller;
             if (selection == null)
             {
                 firstDefaultSelection.Select();
@@ -48,7 +58,8 @@ public class DefaultSelectionController : MonoBehaviour
         }
         else
         {
-            es.SetSelectedGameObject(null);
+            currentControlScheme = ControlSchemes.MNK;
+            ClearSelection();
         }
     }
 
@@ -61,5 +72,10 @@ public class DefaultSelectionController : MonoBehaviour
             selection.Select();
             es.firstSelectedGameObject = selection.gameObject;
         }
+    }
+
+    public void ClearSelection()
+    {
+        es.SetSelectedGameObject(null);
     }
 }
