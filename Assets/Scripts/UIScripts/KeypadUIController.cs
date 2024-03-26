@@ -62,6 +62,11 @@ public class KeypadUIController : MonoBehaviour
 
     public void ValueEntered(string valueEntered)
     {
+        if (DefaultSelectionController.currentControlScheme == ControlSchemes.MNK)
+        {
+            DefaultSelectionController.Instance.ClearSelection();
+        }
+
         switch (valueEntered)
         {
             case "Q":

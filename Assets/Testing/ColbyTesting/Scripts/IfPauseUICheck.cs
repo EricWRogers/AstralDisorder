@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class IfPauseUICheck : MonoBehaviour
 {
-    public bool gameStarted = false;
+    private bool gameStarted = false;
     public Button playButton;
     public Button resumeButton;
 
@@ -16,11 +16,11 @@ public class IfPauseUICheck : MonoBehaviour
     {
         if (gameStarted)
         {
-            resumeButton.Select();
+            DefaultSelectionController.Instance.ChangeSelection(resumeButton);
         }
         else
         {
-            playButton.Select();
+            DefaultSelectionController.Instance.ChangeSelection(playButton);
         }
     }
 }

@@ -2,25 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using OmnicatLabs.Timers;
+using System.Text.RegularExpressions;
+using UnityEngine.InputSystem;
 
-public class TutorialMoveState : UITextState
+public class TutorialMoveState : UITutorialTextState
 {
     public float lingerTime = 1f;
     public GameObject trigger;
-    private bool moved;
 
-    public override void OnStateEnter(UIStateMachineController controller)
+    protected override void DynamicTextUpdate(UIStateMachineController controller)
     {
-        base.OnStateEnter(controller);
-    }
+        Regex exp = new Regex(@"{([^}]+)}");
 
-    public override void OnStateUpdate(UIStateMachineController controller)
-    {
-        base.OnStateEnter(controller);
-    }
-
-    public override void OnStateExit(UIStateMachineController controller)
-    {
-        base.OnStateExit(controller);
+        if (OmnicatLabs.CharacterControllers.CharacterController.Instance.GetComponent<PlayerInput>().currentControlScheme == "Controller")
+        {
+            text = text.Replace("Mouse", "Right Stick");
+            controller.textArea.SetText(exp.Replace(text, "Left Stick"));
+        }
+        else
+        {
+            text = text.Replace("Right Stick", "Mouse");
+            controller.textArea.SetText(exp.Replace(text, "WASD"));
+        }
     }
 }

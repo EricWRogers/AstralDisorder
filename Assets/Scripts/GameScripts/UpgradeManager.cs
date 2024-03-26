@@ -33,7 +33,34 @@ public class UpgradeManager : MonoBehaviour
 
     public void ResetUpgrades()
     {
+        foreach (var upgrade in ownedUpgrades)
+        {
+            switch (upgrade)
+            {
+                case UpgradeIds.WallRunning:
+                    OmnicatLabs.CharacterControllers.CharacterController.Instance.wallRunningUnlocked = false;
+                    break;
+                case UpgradeIds.Grapple:
+                    OmnicatLabs.CharacterControllers.CharacterController.Instance.grappleUnlocked = false;
+                    break;
+
+            }
+        }
+
         ownedUpgrades.Clear();
         ownedUpgrades.AddRange(savedUpgrades);
+
+        foreach (var upgrade in savedUpgrades)
+        {
+            switch (upgrade)
+            {
+                case UpgradeIds.WallRunning:
+                    OmnicatLabs.CharacterControllers.CharacterController.Instance.wallRunningUnlocked = true;
+                    break;
+                case UpgradeIds.Grapple:
+                    OmnicatLabs.CharacterControllers.CharacterController.Instance.grappleUnlocked = true;
+                    break;
+            }
+        }
     }
 }

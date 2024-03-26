@@ -208,6 +208,8 @@ MonoBehaviour:
   validObstaceFilter:
     serializedVersion: 2
     m_Bits: 4294967295
+  tutorialStateMachine: {fileID: 0}
+  col: {fileID: 5259184846169861660}
 --- !u!1 &4190704796349751181
 GameObject:
   m_ObjectHideFlags: 0
