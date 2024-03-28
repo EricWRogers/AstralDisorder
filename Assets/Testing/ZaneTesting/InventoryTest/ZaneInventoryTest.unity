@@ -492,6 +492,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6399037338713038639, guid: 6071f1cac920d1b47bc023ebbde55d82,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6408147174958129941, guid: 6071f1cac920d1b47bc023ebbde55d82,
         type: 3}
       propertyPath: m_Name
@@ -2039,6 +2044,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemsParent: {fileID: 490888488}
   inventoryUI: {fileID: 1676379273}
+  show: 1
 --- !u!224 &1763410212 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2826805779722779175, guid: 6071f1cac920d1b47bc023ebbde55d82,
@@ -2269,6 +2275,11 @@ PrefabInstance:
     - target: {fileID: 2826805779722779175, guid: 6071f1cac920d1b47bc023ebbde55d82,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399037338713038639, guid: 6071f1cac920d1b47bc023ebbde55d82,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6408147174958129941, guid: 6071f1cac920d1b47bc023ebbde55d82,
