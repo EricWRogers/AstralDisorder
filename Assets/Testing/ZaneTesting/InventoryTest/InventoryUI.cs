@@ -39,11 +39,17 @@ public class InventoryUI : MonoBehaviour
         {
             if (i < InventorySystem.Instance.inventory.Count)
             {
+                if(slots[i].icon.enabled == false)
+                {
+                    slots[i].icon.enabled = true;
+                }
+
                 slots[i].Additem(InventorySystem.Instance.inventory[i].Data);
             }
             else
             {
                 slots[i].ClearSlot();
+                slots[i].icon.enabled = false;
             }
         }
     }
