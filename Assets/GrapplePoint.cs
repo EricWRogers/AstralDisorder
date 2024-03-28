@@ -16,6 +16,7 @@ public class GrapplePoint : MonoBehaviour
     [Tooltip("Describes what layers are affected by the raycast that checks whether the player is valid to grapple")]
     public LayerMask validObstaceFilter;
     public UIStateMachineController tutorialStateMachine;
+    public Collider col;
 
     private bool firstTime1 = true;
     private bool firstTime2 = true;
@@ -62,6 +63,7 @@ public class GrapplePoint : MonoBehaviour
                 {
                     toggleObject.SetActive(true);
                     scalingImage.color = Color.green;
+                    col.enabled = true;
                     if (firstTime2 && tutorialStateMachine != null)
                     {
                         firstTime2 = false;
@@ -70,6 +72,7 @@ public class GrapplePoint : MonoBehaviour
                 }
                 else
                 {
+                    col.enabled = false;
                     scalingImage.color = Color.red;
                 }
             }

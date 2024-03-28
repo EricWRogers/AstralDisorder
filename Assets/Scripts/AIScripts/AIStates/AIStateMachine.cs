@@ -20,7 +20,6 @@ public class AIStateMachine : MonoBehaviour //Dont touch this script.
 
     private NavMeshAgent agent;
 
-   // public TMP_Text stateVisualizer;
     private void Start()
     {
         agent = GetComponentInParent<NavMeshAgent>();
@@ -29,6 +28,7 @@ public class AIStateMachine : MonoBehaviour //Dont touch this script.
 
     private void Update()
     {
+        Debug.Log($"Monster State: {currentState}");
         //stateVisualizer.text = currentState.ToString(); //Testing
 
         if (!agent.isStopped)

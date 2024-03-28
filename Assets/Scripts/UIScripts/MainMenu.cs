@@ -20,7 +20,8 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
-        OmnicatLabs.CharacterControllers.CharacterController.Instance.SetControllerLocked(true, true, true);
+        //OmnicatLabs.CharacterControllers.CharacterController.Instance.SetControllerLocked(true, true, true);
+        OmnicatLabs.CharacterControllers.CharacterController.Instance.SetLockedNoDisable(true, true, true);
         crosshair.SetActive(false);
     }
 
@@ -36,7 +37,8 @@ public class MainMenu : MonoBehaviour
     {
         GetComponent<Dialogue>().TriggerDialogue();
         crosshair.SetActive(true);
-        OmnicatLabs.CharacterControllers.CharacterController.Instance.SetControllerLocked(false, true, false);
+        //OmnicatLabs.CharacterControllers.CharacterController.Instance.SetControllerLocked(false, true, false);
+        OmnicatLabs.CharacterControllers.CharacterController.Instance.SetLockedNoDisable(false, true, false);
         cutscene.StartCutscene();
         InvokePostPlay();
     }
