@@ -41,7 +41,6 @@ public class UpgradeManager : MonoBehaviour
                 case UpgradeIds.Grapple:
                     OmnicatLabs.CharacterControllers.CharacterController.Instance.grappleUnlocked = false;
                     break;
-
             }
         }
 
