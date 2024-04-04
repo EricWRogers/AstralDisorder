@@ -23,12 +23,13 @@ public class Keypad : Interactable
             go.GetComponent<KeypadUIController>().correctPass = codeGenerator.RandNum;
             go.GetComponent<KeypadUIController>().controller = uiController;
             go.GetComponent<KeypadUIController>().onCorrectPassword.AddListener(door.Open);
-            go.transform.GetChild(1).transform.GetChild(0).GetComponent<Button>().Select();
+            DefaultSelectionController.Instance.ChangeSelection(go.transform.GetChild(1).transform.GetChild(0).GetComponent<Button>());
         }
 
         uiController.ChangeState<HUDKeypadState>();
 
-        OmnicatLabs.CharacterControllers.CharacterController.Instance.SetControllerLocked(true, OmnicatLabs.CharacterControllers.CharacterController.Instance.playerIsHidden, true);
+        //OmnicatLabs.CharacterControllers.CharacterController.Instance.SetControllerLocked(true, OmnicatLabs.CharacterControllers.CharacterController.Instance.playerIsHidden, true);
+        OmnicatLabs.CharacterControllers.CharacterController.Instance.SetLockedNoDisable(true, OmnicatLabs.CharacterControllers.CharacterController.Instance.playerIsHidden, true);
     }
 
     protected override void OnHover()
