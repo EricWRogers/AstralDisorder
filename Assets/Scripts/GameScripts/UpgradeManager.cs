@@ -42,6 +42,7 @@ public class UpgradeManager : MonoBehaviour
                     break;
                 case UpgradeIds.Grapple:
                     OmnicatLabs.CharacterControllers.CharacterController.Instance.grappleUnlocked = false;
+                    ArmController.Instance.DisableGrapple();
                     break;
             }
         }
@@ -58,6 +59,7 @@ public class UpgradeManager : MonoBehaviour
                     break;
                 case UpgradeIds.Grapple:
                     OmnicatLabs.CharacterControllers.CharacterController.Instance.grappleUnlocked = true;
+                    ArmController.Instance.EnableGrapple();
                     break;
             }
         }
