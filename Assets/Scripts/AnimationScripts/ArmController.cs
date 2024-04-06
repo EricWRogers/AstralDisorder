@@ -24,8 +24,14 @@ public class ArmController : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
+
     public void EnableGrapple()
     {
+        foreach(var transform in GetComponentsInChildren<Transform>(true))
+        {
+            transform.gameObject.layer = LayerMask.NameToLayer("Weapon");
+        }
+
         grappleModel.SetActive(true);
     }
 

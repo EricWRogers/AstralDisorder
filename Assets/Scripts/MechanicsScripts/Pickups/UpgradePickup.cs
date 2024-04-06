@@ -41,6 +41,7 @@ public class UpgradePickup : Interactable
                 break;
             case UpgradeIds.Grapple:
                 OmnicatLabs.CharacterControllers.CharacterController.Instance.grappleUnlocked = true;
+                ArmController.Instance.EnableGrapple();
                 UpgradeManager.AddToOwned(UpgradeIds.Grapple);
                 break;
             case UpgradeIds.DoubleJump:
