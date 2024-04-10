@@ -18,6 +18,7 @@ public class UpgradePickup : Interactable
 {
     public float rotationSpeed = 45f;
     public UpgradeIds UpgradeID;
+    public InventoryItemData item;   // Item to put in the inventory if picked up
 
     public override void OnInteract()
     {
@@ -51,6 +52,8 @@ public class UpgradePickup : Interactable
                 UpgradeManager.AddToOwned(UpgradeIds.LightningGun);
                 break;
         }
+
+        InventorySystem.Instance.Add(item);
 
         gameObject.SetActive(false);
     }

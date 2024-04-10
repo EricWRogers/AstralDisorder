@@ -9,6 +9,7 @@ public class additem : MonoBehaviour
    public void OnClick()
     {
         inventory.Add(item);
+        Debug.Log("Added " + item);
     }
 
    /* private void OnTriggerEnter(Collider other)
