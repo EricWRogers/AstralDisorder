@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class HUDKeypadState : UIState
 {
+    private bool playerHiddenState;
+
+    public override void OnStateEnter(UIStateMachineController controller)
+    {
+        base.OnStateEnter(controller);
+        playerHiddenState = OmnicatLabs.CharacterControllers.CharacterController.Instance.playerIsHidden;
+        OmnicatLabs.CharacterControllers.CharacterController.Instance.SetLockedNoDisable(true, true, true);
+    }
+
     public override void OnStateUpdate(UIStateMachineController controller)
     {
         base.OnStateUpdate(controller);
@@ -18,7 +27,8 @@ public class HUDKeypadState : UIState
     {
         base.OnStateExit(controller);
 
-        OmnicatLabs.CharacterControllers.CharacterController.Instance.SetControllerLocked(false, OmnicatLabs.CharacterControllers.CharacterController.Instance.playerIsHidden, false);
+        //OmnicatLabs.CharacterControllers.CharacterController.Instance.SetControllerLocked(false, OmnicatLabs.CharacterControllers.CharacterController.Instance.playerIsHidden, false);
+        OmnicatLabs.CharacterControllers.CharacterController.Instance.SetLockedNoDisable(false, playerHiddenState, false);
         Destroy(FindObjectOfType<KeypadUIController>().gameObject);
     }
 }

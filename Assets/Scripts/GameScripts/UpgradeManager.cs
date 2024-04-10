@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,7 +16,6 @@ public class UpgradeManager : MonoBehaviour
     public static void AddToOwned(UpgradeIds upgrade)
     {
         ownedUpgrades.Add(upgrade);
-        Debug.Log(ownedUpgrades.Count);
     }
 
     public static bool Owns(UpgradeIds upgradeToQuery)
@@ -43,11 +41,11 @@ public class UpgradeManager : MonoBehaviour
                 case UpgradeIds.Grapple:
                     OmnicatLabs.CharacterControllers.CharacterController.Instance.grappleUnlocked = false;
                     break;
-
             }
         }
 
         ownedUpgrades.Clear();
+        //clear inventory visuals 
         ownedUpgrades.AddRange(savedUpgrades);
 
         foreach (var upgrade in savedUpgrades)
@@ -62,5 +60,7 @@ public class UpgradeManager : MonoBehaviour
                     break;
             }
         }
+
+        //show inventory visuals
     }
 }
