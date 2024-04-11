@@ -4335,10 +4335,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: AIChaseState, Assembly-CSharp
-        m_MethodName: SetAgentSpeed
-        m_Mode: 4
+      - m_Target: {fileID: 3932736374954567911}
+        m_TargetAssemblyTypeName: DifficultySelector, Assembly-CSharp
+        m_MethodName: SetNormalDifficulty
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6317,10 +6317,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: AIChaseState, Assembly-CSharp
-        m_MethodName: SetAgentSpeed
-        m_Mode: 4
+      - m_Target: {fileID: 3932736374954567911}
+        m_TargetAssemblyTypeName: DifficultySelector, Assembly-CSharp
+        m_MethodName: SetHardDifficulty
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6608,10 +6608,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: AIChaseState, Assembly-CSharp
-        m_MethodName: SetAgentSpeed
-        m_Mode: 4
+      - m_Target: {fileID: 3932736374954567911}
+        m_TargetAssemblyTypeName: DifficultySelector, Assembly-CSharp
+        m_MethodName: SetEasyDifficulty
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7511,6 +7511,7 @@ GameObject:
   - component: {fileID: 4325974938490392948}
   - component: {fileID: 3672165155506037183}
   - component: {fileID: 4136573975838624693}
+  - component: {fileID: 3932736374954567911}
   m_Layer: 5
   m_Name: Play
   m_TagString: Untagged
@@ -7752,6 +7753,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &3932736374954567911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4834422964658977920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 546e557c59bed834ca69db9c5ff071ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monsterNavMeshAgent: {fileID: 8568769717320806197, guid: c217789bd399bde45ad9aa7b30e5d4e5,
+    type: 3}
+  easySpeed: 3
+  mediumSpeed: 6
+  hardSpeed: 7
+  extremeSpeed: 9
 --- !u!1 &4870110620280504172
 GameObject:
   m_ObjectHideFlags: 0
@@ -9901,7 +9920,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad2f2201e0162dc4ca30e43312d7d718, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameStarted: 0
   playButton: {fileID: 4136573975838624693}
   resumeButton: {fileID: 1733899161480583231}
 --- !u!1 &6057390079350095455
@@ -12658,10 +12676,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: AIChaseState, Assembly-CSharp
-        m_MethodName: SetAgentSpeed
-        m_Mode: 4
+      - m_Target: {fileID: 3932736374954567911}
+        m_TargetAssemblyTypeName: DifficultySelector, Assembly-CSharp
+        m_MethodName: SetExtremeDifficulty
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
