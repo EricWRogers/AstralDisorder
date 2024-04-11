@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: edfc3dff76c5cff449ea64b9e6c30d73, type: 2}
+  - {fileID: 8787639336047627913, guid: 99f7c422deea8b542bef2663d314578a, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -161,13 +161,16 @@ MonoBehaviour:
   onHover:
     m_PersistentCalls:
       m_Calls: []
+  canInteract: 1
   leverPivot: {fileID: 9139715196591857119}
   flipTime: 0.7
+  wireOnMaterial: {fileID: 0}
   linkedLights:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  wires: []
 --- !u!1 &5024165825466596171
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,7 +233,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: edfc3dff76c5cff449ea64b9e6c30d73, type: 2}
+  - {fileID: 1977343564503383527, guid: 5bee08108aabe4a4c847850bc3abeed5, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
