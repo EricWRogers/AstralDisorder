@@ -11,23 +11,23 @@ public class AIChaseState : MonoBehaviour, IEnemyState
     private int attackRange;
     private Animator anim;
 
-    public float agentSpeed = 9.0f;
+    //public float agentSpeed = 9.0f;
 
     public NavMeshHit lastHit;
 
 
     public OmnicatLabs.CharacterControllers.CharacterController characterController;
 
-    public void SetAgentSpeed(float speed)
-    {
-        agentSpeed = speed;
-    }
+    //public void SetAgentSpeed(float speed)
+    //{
+        //agentSpeed = speed;
+    //}
 
     public void Enter(AIStateMachine stateMachine) //First thing the state does.
     {
         anim = GetComponent<AIStateMachine>().anim;
         //Debug.Log("Entering Chase State");
-        agent.speed = agentSpeed;
+        //agent.speed = agentSpeed;
 
         this.stateMachine = stateMachine;
         agent = GetComponentInParent<NavMeshAgent>();

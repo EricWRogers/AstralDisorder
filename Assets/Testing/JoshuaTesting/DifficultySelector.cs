@@ -3,54 +3,30 @@ using UnityEngine.AI;
 
 public class DifficultySelector : MonoBehaviour
 {
-    public DifficultySetting difficultySetting;
     public NavMeshAgent monsterNavMeshAgent; // Reference to the NavMeshAgent of the monster
+    public float easySpeed = 3.0f;
+    public float mediumSpeed = 6.0f;
+    public float hardSpeed = 7.0f;
+    public float extremeSpeed = 9.0f;
 
     // Assign these methods to buttons in the UI
     public void SetEasyDifficulty()
     {
-        difficultySetting.currentDifficulty = Difficulty.Easy;
-        AdjustMonsterSpeed();
+        monsterNavMeshAgent.speed = easySpeed;
     }
 
     public void SetNormalDifficulty()
     {
-        difficultySetting.currentDifficulty = Difficulty.Normal;
-        AdjustMonsterSpeed();
+        monsterNavMeshAgent.speed = mediumSpeed;
     }
 
     public void SetHardDifficulty()
     {
-        difficultySetting.currentDifficulty = Difficulty.Hard;
-        AdjustMonsterSpeed();
+        monsterNavMeshAgent.speed = hardSpeed;
     }
 
     public void SetExtremeDifficulty()
     {
-        difficultySetting.currentDifficulty = Difficulty.Extreme;
-        AdjustMonsterSpeed();
-    }
-
-    private void AdjustMonsterSpeed()
-    {
-        // Adjust the monster's speed based on the current difficulty
-        switch (difficultySetting.currentDifficulty)
-        {
-            case Difficulty.Easy:
-                monsterNavMeshAgent.speed = 5f; // Adjust this value accordingly
-                break;
-            case Difficulty.Normal:
-                monsterNavMeshAgent.speed = 7f; // Adjust this value accordingly
-                break;
-            case Difficulty.Hard:
-                monsterNavMeshAgent.speed = 9f; // Adjust this value accordingly
-                break;
-            case Difficulty.Extreme:
-                monsterNavMeshAgent.speed = 12f; // Adjust this value accordingly
-                break;
-            default:
-                monsterNavMeshAgent.speed = 7f; // Default speed
-                break;
-        }
+        monsterNavMeshAgent.speed = extremeSpeed;
     }
 }
