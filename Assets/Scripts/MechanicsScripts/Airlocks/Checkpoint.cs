@@ -7,6 +7,10 @@ public class Checkpoint : MonoBehaviour
     public static Transform spawnpoint;
     private AIChaseState agent;
     public Animator animator;
+    [StringDropdown(EditorStringLists.BuildScenes)]
+    public int sceneToLoad;
+    [StringDropdown(EditorStringLists.BuildScenes)]
+    public int sceneToUnload;
 
     private void Start()
     {
@@ -21,5 +25,12 @@ public class Checkpoint : MonoBehaviour
         animator.SetTrigger("Saving");
         //if (shouldAITransition)
         //    agent.checkPoint = true;
+
+        LoadManager.ChangeScenes(sceneToLoad, sceneToUnload).AddListener(HandleAfterLoad);
+    }
+
+    private void HandleAfterLoad()
+    {
+        Debug.Log("Load Finished");
     }
 }

@@ -1,86 +1,37 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using OmnicatLabs.OmniEnum;
-using System.Linq;
-using System.ComponentModel;
-using System.Reflection;
-using System;
-using UnityEditor;
-
-public class PathAttribute : Attribute
-{
-    public string path;
-}
-
-
-public enum Area
-{
-    [Path]
-    Tutorial,
-    [Path]
-    Hub,
-    [Path]
-    ControlStation,
-    [Path]
-    CrewQuarters,
-}
-
+using UnityEngine.Events;
 
 public class LoadManager : MonoBehaviour
 {
-    public List<string> sceneNames;
-    private List<string> buildScenes = new List<string>();
-    private List<FieldInfo> fields = new List<FieldInfo>();
+    private static LoadManager Instance;
+    private UnityEvent onComplete;
 
-    private void Start()
+    private void Awake()
     {
-        foreach(EditorBuildSettingsScene scene in EditorBuildSettings.scenes)
+        if (Instance == null)
         {
-            buildScenes.Add(scene.path);
+            Instance = this;
         }
-        fields = typeof(Area).GetFields(BindingFlags.Public | BindingFlags.Static).Where(field => field.IsDefined(typeof(PathAttribute), false)).ToList();
+    }
 
-        foreach (var field in fields)
+    public static UnityEvent ChangeScenes(int sceneToLoad, int sceneToUnload)
+    {
+        Instance.StartCoroutine(Instance.LoadRoutine(sceneToLoad, sceneToUnload));
+        return Instance.onComplete;
+    }
+
+    public IEnumerator LoadRoutine(int loadIndex, int unloadIndex)
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(loadIndex, LoadSceneMode.Additive);
+        AsyncOperation asyncUnload = SceneManager.UnloadSceneAsync(unloadIndex);
+
+        while (!asyncLoad.isDone || !asyncUnload.isDone)
         {
-            PathAttribute attr = (PathAttribute)field.GetCustomAttribute(typeof(PathAttribute));
-            var name = field.Name.Split(" ").Last();
-
-            attr.path = buildScenes.Find(scenePath => scenePath.Contains(name));
+            yield return null;
         }
 
-        Debug.Log(GetPathFromEnum(Area.ControlStation));
-
-        //fields.ToList().ForEach(field => Debug.Log(field));
-
-        //for (int i = 0; i < SceneManager.sceneCountInBuildSettings; i++)
-        //{
-        //    buildScenes.Add(SceneManager.GetSceneByName(sceneNames[i]));
-        //    //buildScenes.Add(SceneUtility.GetScenePathByBuildIndex(i));
-        //}
-        //Debug.Log(System.Enum.GetName(typeof(Area), Area.ControlStation));
-        //FindSceneByEnum(Area.ControlStation);
-    }
-
-    private string GetPathFromEnum(Area _enum)
-    {
-        var attr = (PathAttribute)fields.Find(field => field.Name.Contains(_enum.ToString())).GetCustomAttribute(typeof(PathAttribute));
-        return attr.path;
-    }
-
-    public static void ChangeScenes(Area areaToUnload, Area areaToLoad)
-    {
-
-    }
-
-    public IEnumerator LoadRoutine()
-    {
-        yield return null;
-    }
-
-    public IEnumerator UnloadRoutine()
-    {
-        yield return null;
+        onComplete.Invoke();
     }
 }
