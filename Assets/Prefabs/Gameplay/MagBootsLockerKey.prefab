@@ -20,7 +20,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5082817013665399671
 Transform:
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ab5d83f396c96047921672a1669f452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  message: 'This should be able to access the  Grappling Hook! '
+  message: 'This should be able to access the Grappling Hook! '
   oneTime: 0
   timeShown: 7
   lockoutTime: 7
