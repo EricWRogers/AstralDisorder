@@ -7,10 +7,7 @@ public class Checkpoint : MonoBehaviour
     public static Transform spawnpoint;
     private AIChaseState agent;
     public Animator animator;
-    [StringDropdown(EditorStringLists.BuildScenes)]
-    public int sceneToLoad;
-    [StringDropdown(EditorStringLists.BuildScenes)]
-    public int sceneToUnload;
+    public bool playerIsHere;
 
     private void Start()
     {
@@ -21,16 +18,14 @@ public class Checkpoint : MonoBehaviour
         SaveManager.Instance.Save();
         spawnpoint = transform;
         OmnicatLabs.CharacterControllers.CharacterController.Instance.savedStamina = OmnicatLabs.CharacterControllers.CharacterController.Instance.currentStamina;
-
+        playerIsHere = true;
         animator.SetTrigger("Saving");
         //if (shouldAITransition)
         //    agent.checkPoint = true;
-
-        LoadManager.ChangeScenes(sceneToLoad, sceneToUnload).AddListener(HandleAfterLoad);
     }
 
-    private void HandleAfterLoad()
+    private void OnTriggerExit(Collider other)
     {
-        Debug.Log("Load Finished");
+        playerIsHere = false;
     }
 }

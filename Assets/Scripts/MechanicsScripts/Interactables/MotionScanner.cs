@@ -5,19 +5,23 @@ using OmnicatLabs.Audio;
 
 public class MotionScanner : MonoBehaviour
 {
-    GameObject player;
     public Transform doorPivot;
     public VirtualTrigger doorTrigger;
     public float openAngle = -50f;
     public float timeToOpen = 5f;
+    public Checkpoint airLockZone;
+    public MotionScanner otherDoor;
     public UnityEvent onDoorClose = new UnityEvent();
     public UnityEvent onDoorOpen = new UnityEvent();
-    public AirlockDoorButton buttonForThisDoor;
-    public AirlockDoorButton buttonForOtherDoor;
+    [StringDropdown(EditorStringLists.BuildScenes)]
+    public int sceneToLoad;
+    [StringDropdown(EditorStringLists.BuildScenes)]
+    public int sceneToUnload;
     public bool doorOpening = false;
     [HideInInspector]
     public bool doorOpened = false;
     public bool doorClosed = true;
+    public static MotionScanner lastDoorOpened;
 
     private void Start()
     {
@@ -30,12 +34,7 @@ public class MotionScanner : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (!doorOpened)
-                AudioManager.Instance.Play("Door", gameObject);
-
-            OmniTween.CancelTween(doorPivot);
-            doorPivot.TweenLocalYRotation(openAngle, timeToOpen, () => onDoorOpen.Invoke());
-            doorOpened = true;
+            Open();
         }
     }
 
@@ -57,50 +56,34 @@ public class MotionScanner : MonoBehaviour
         }
     }
 
+    public void Open()
+    {
+        if (!doorOpened)
+            AudioManager.Instance.Play("Door", gameObject);
+
+        OmniTween.CancelTween(doorPivot);
+        doorPivot.TweenLocalYRotation(openAngle, timeToOpen, () => onDoorOpen.Invoke());
+        doorOpened = true;
+        doorClosed = false;
+        lastDoorOpened = this;
+    }
+
     private void OnDoorClose()
     {
         doorClosed = true;
-        buttonForThisDoor.SetInteractable(true);
-        buttonForOtherDoor.SetInteractable(true);
+        if (airLockZone.playerIsHere && otherDoor.doorClosed)
+        {
+            LoadManager.ChangeScenes(sceneToLoad, sceneToUnload).AddListener(OnLoadDone);
+        }
+    }
+
+    private void OnLoadDone()
+    {
+        otherDoor.Open();
     }
 
     private void OnDoorOpen()
     {
-        buttonForOtherDoor.SetInteractable(false);
-        buttonForThisDoor.SetInteractable(false);
+        
     }
-
-    //private void OnTriggerEnter(Collider collider)
-    //{
-    //    //If the player is within the collider, open the door
-    //    if (collider.CompareTag("Player") && !doorOpening)
-    //    {
-    //        //OmniTween.CancelTween(doorPivot);
-    //        doorPivot.TweenYRot(openAngle, timeToOpen, () => onDoorOpen.Invoke());
-    //        doorOpening = true;
-    //        doorClosed = false;
-    //        buttonForOtherDoor.SetInteractable(false);
-    //        buttonForThisDoor.SetInteractable(false);
-    //    }
-    //}
-
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    Debug.Log("Exit");
-    //    //OmniTween.CancelTween(doorPivot);
-    //    doorPivot.TweenYRot(-openAngle, timeToOpen, () => onDoorClose.Invoke());
-    //}
-
-    //void DoorOpen()
-    //{
-    //    doorPivot.TweenYRot(-openAngle, 2f, () => onDoorClose.Invoke());
-    //}
-
-    //void DoorClose()
-    //{
-    //    doorClosed = true;
-    //    doorOpening = false;
-    //    buttonForOtherDoor.SetInteractable(true);
-    //    buttonForThisDoor.SetInteractable(true);
-    //}
 }

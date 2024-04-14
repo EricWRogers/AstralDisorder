@@ -23,6 +23,11 @@ public class TutorialTextTrigger : MonoBehaviour
     public bool oneTime = false;
     public Dialogue exitDialogue;
 
+    private void Start()
+    {
+        tutorialController = GameObject.FindGameObjectWithTag("TutorialManager").GetComponent<UIStateMachineController>();
+    }
+
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))

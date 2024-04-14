@@ -4,10 +4,17 @@ using UnityEngine.UI;
 public class Keypad : Interactable
 {
     public GameObject keypadUI;
-    public Canvas canvas;
+    private Canvas canvas;
     public KeypadDoor door;
     public RandNumGen codeGenerator;
-    public UIStateMachineController uiController;
+    private UIStateMachineController uiController;
+
+    protected override void Start()
+    {
+        base.Start();
+        uiController = GameObject.FindGameObjectWithTag("GameManager").GetComponent<UIStateMachineController>();
+        canvas = GameObject.FindGameObjectWithTag("HUD").GetComponent<Canvas>();
+    }
 
     public override void OnInteract()
     {

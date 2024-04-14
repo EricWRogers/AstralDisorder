@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class LoadManager : MonoBehaviour
 {
     private static LoadManager Instance;
-    private UnityEvent onComplete;
+    private UnityEvent onComplete = new UnityEvent();
 
     private void Awake()
     {
@@ -14,6 +14,9 @@ public class LoadManager : MonoBehaviour
         {
             Instance = this;
         }
+
+        //Loading tutorial by default when the game boots
+        SceneManager.LoadScene(1, LoadSceneMode.Additive);
     }
 
     public static UnityEvent ChangeScenes(int sceneToLoad, int sceneToUnload)

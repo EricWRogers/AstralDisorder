@@ -1,13 +1,15 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class InventoryUI : MonoBehaviour
 {
     public Transform itemsParent;
     public GameObject inventoryUI;
+    public GameObject slotPrefab;
 
-    InventorySlot[] slots;
+    List<InventorySlot> slots = new List<InventorySlot>();
     public bool show = false;
 
     // Start is called before the first frame update
@@ -17,11 +19,11 @@ public class InventoryUI : MonoBehaviour
 
         InventorySystem.Instance.onItemChangedCallBack += UpdateUI;
 
-        slots = itemsParent.GetComponentsInChildren<InventorySlot>();
+       // slots = itemsParent.GetComponentsInChildren<InventorySlot>();
 
         PostPlay();
 
-        for (int i = 0; i < slots.Length; i++)
+        for (int i = 0; i < slots.Count; i++)
         {
             Debug.Log("Hidden");
             slots[i].ClearSlot();
@@ -47,19 +49,32 @@ public class InventoryUI : MonoBehaviour
 
     void UpdateUI()
     {
-        for (int i = 0; i < slots.Length; i++)
+        for (int i = 0; i < InventorySystem.Instance.inventory.Count; i++)
         {
-            if (i < InventorySystem.Instance.inventory.Count)
+            if (slots.Count < i + 1)
             {
-                if (slots[i].icon.enabled == false)
-                {
-                    slots[i].GetComponentInChildren<Image>().enabled = true;
-                    Debug.Log("Revealed");
-                }
-
-                slots[i].Additem(InventorySystem.Instance.inventory[i].Data);
+                var newSlot = Instantiate(slotPrefab, itemsParent);
+                slots.Add(newSlot.GetComponent<InventorySlot>());
             }
 
+            slots[i].GetComponentInChildren<Image>().enabled = true;
+            slots[i].Additem(InventorySystem.Instance.inventory[i].Data);
         }
+
+
+        //for (int i = 0; i < slots.Length; i++)
+        //{
+        //    if (i < InventorySystem.Instance.inventory.Count)
+        //    {
+        //        if (slots[i].icon.enabled == false)
+        //        {
+        //            slots[i].GetComponentInChildren<Image>().enabled = true;
+        //            Debug.Log("Revealed");
+        //        }
+
+        //        slots[i].Additem(InventorySystem.Instance.inventory[i].Data);
+        //    }
+
+        //}
     }
 }

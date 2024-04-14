@@ -12,6 +12,9 @@ TagManager:
   - Transition
   - StaminaItem
   - Grappleable
+  - GameManager
+  - HUD
+  - TutorialManager
   layers:
   - Default
   - TransparentFX
@@ -36,7 +39,7 @@ TagManager:
   - Rubble
   - TriggerZone
   - Grappleable
-  - 
+  - WallPiece
   - 
   - 
   - 

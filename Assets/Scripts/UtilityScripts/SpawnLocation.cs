@@ -15,7 +15,9 @@ public class SpawnLocation : MonoBehaviour
     public int spawnIndex = 0;
 
     private void Start()
-    {
+    {   
+        #if UNITY_EDITOR
         OmnicatLabs.CharacterControllers.CharacterController.Instance.transform.position = spawnPoints[spawnIndex].point.position;
+        #endif
     }
 }
