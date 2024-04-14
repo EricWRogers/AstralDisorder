@@ -32,6 +32,7 @@ public class TutorialTextTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log("Picking up player");
             switch (triggerType)
             {
                 case TriggerType.Move:

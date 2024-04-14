@@ -16,7 +16,7 @@ public class LoadManager : MonoBehaviour
         }
 
         //Loading tutorial by default when the game boots
-        SceneManager.LoadScene(1, LoadSceneMode.Additive);
+        SceneManager.LoadScene(SpawnLocation.GetStartingScene(), LoadSceneMode.Additive);
     }
 
     public static UnityEvent ChangeScenes(int sceneToLoad, int sceneToUnload)

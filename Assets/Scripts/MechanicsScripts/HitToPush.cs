@@ -20,7 +20,6 @@ public class HitToPush : MonoBehaviour, ISaveable
     private void Start()
     {
         pieces.AddRange(GetComponentsInChildren<Collider>().ToList().Where(col => col.isTrigger).Select(col => col.gameObject));
-        pieces.ForEach(piece => Debug.Log(piece.name));
         startingPositions.AddRange(GetComponentsInChildren<Transform>().ToList().Select(trans => trans.localPosition));
         startingScales.AddRange(GetComponentsInChildren<Transform>().ToList().Select(trans => trans.localScale));
         startingRotations.AddRange(GetComponentsInChildren<Transform>().ToList().Select(trans => trans.localRotation));
