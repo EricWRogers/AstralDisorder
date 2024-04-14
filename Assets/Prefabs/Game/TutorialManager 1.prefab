@@ -17,6 +17,8 @@ GameObject:
   - component: {fileID: 6182804885305753489}
   - component: {fileID: 4493994190226893796}
   - component: {fileID: 6607744090834656941}
+  - component: {fileID: 595120056459128910}
+  - component: {fileID: 6516486537575880168}
   m_Layer: 0
   m_Name: States
   m_TagString: Untagged
@@ -52,6 +54,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fullscreen: 0
+  fullscreenExitState: {fileID: 0}
 --- !u!114 &5838873029856817794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,9 +68,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fullscreen: 0
-  text: 'WASD to move around
+  fullscreenExitState: {fileID: 0}
+  text: '{WASD} to move around
 
-    Use the mouse to look'
+    Use the Mouse to look'
+  interactionName: Movement
   lingerTime: 2
   trigger: {fileID: 0}
 --- !u!114 &8493892918870138474
@@ -83,7 +88,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fullscreen: 0
-  text: Use the mouse to look around
+  fullscreenExitState: {fileID: 0}
+  text: Use the {mouse} to look around
+  interactionName: 
 --- !u!114 &206431800723680026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,7 +104,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fullscreen: 0
-  text: F to interact with various objects in the world
+  fullscreenExitState: {fileID: 0}
+  text: '{F} to interact with various objects in the world'
+  interactionName: Interact
 --- !u!114 &9194441722285535007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,8 +120,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fullscreen: 0
-  text: Left click to use your weapon. You can use it destroy various parts of the
-    environment
+  fullscreenExitState: {fileID: 0}
+  text: '{Left click} to use your weapon. You can use it destroy various parts of
+    the environment'
+  interactionName: Attack
 --- !u!114 &6182804885305753489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,7 +137,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fullscreen: 0
-  text: Hold Left CTRL to crouch
+  fullscreenExitState: {fileID: 0}
+  text: Hold {Left CTRL} to crouch
+  interactionName: Crouch
 --- !u!114 &4493994190226893796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,8 +153,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fullscreen: 0
-  text: Left Shift to toggle sprint. Sprinting consumes Stamina that needs to be
-    replenished
+  fullscreenExitState: {fileID: 0}
+  text: '{Left Shift} to toggle sprint. Sprinting consumes Stamina that needs to
+    be replenished'
+  interactionName: Sprint
 --- !u!114 &6607744090834656941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,7 +170,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fullscreen: 0
-  text: Space to jump
+  fullscreenExitState: {fileID: 0}
+  text: '{Space} to jump'
+  interactionName: Jump
+--- !u!114 &595120056459128910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6990011821007161106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97796f38580fd5942b79572f261d7a9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fullscreen: 0
+  fullscreenExitState: {fileID: 0}
+  text: When the inner icon is green you are within range to grapple.
+  interactionName: 
+--- !u!114 &6516486537575880168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6990011821007161106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b46b5619608f704796e476ad730863e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fullscreen: 0
+  fullscreenExitState: {fileID: 0}
+  text: Press {E} to grapple
+  interactionName: Grapple
 --- !u!1 &7181991472123799475
 GameObject:
   m_ObjectHideFlags: 0

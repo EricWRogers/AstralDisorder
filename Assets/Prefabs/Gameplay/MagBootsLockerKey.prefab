@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7391939734762604887}
   - component: {fileID: 3433828384767172314}
   - component: {fileID: 8014116679478130079}
+  - component: {fileID: 6258371624319164874}
   m_Layer: 13
   m_Name: MagBootsLockerKey
   m_TagString: Untagged
@@ -64,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f86772afea4534d4bace0683aea428e2, type: 2}
+  - {fileID: 2100000, guid: c0295f0952a20a34d90a302150e5006b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -93,7 +94,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2279548547986627209}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 93a86db3a9c4bcb488bcb801bd08231d, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -105,8 +106,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.020654358, y: 0.22942714, z: 0.3958742}
-  m_Center: {x: -0.010327142, y: 0, z: 0}
+  m_Size: {x: 0.020654358, y: 0.4065876, z: 0.6157608}
+  m_Center: {x: -0.010327142, y: -0.028109819, z: 0.0043754578}
 --- !u!114 &3433828384767172314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,14 +121,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
-  contactRadius: 3
+  contactRadius: 4
   interactText: to Pick Up
+  uninteractableText: 
   onInteract:
     m_PersistentCalls:
       m_Calls: []
   onHover:
     m_PersistentCalls:
       m_Calls: []
+  canInteract: 1
   item: {fileID: 11400000, guid: b5fa98e88d18bc746a509605efbca41c, type: 2}
 --- !u!114 &8014116679478130079
 MonoBehaviour:
@@ -141,8 +144,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ab5d83f396c96047921672a1669f452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  message: Looks like... Some kinda keycard. I'm pretty sure these are kind that
-    are used for employee lockers.
+  message: 'This should be able to access the  Grappling Hook! '
   oneTime: 0
-  timeShown: 5
-  lockoutTime: 5
+  timeShown: 7
+  lockoutTime: 7
+  followUp: {fileID: 0}
+--- !u!114 &6258371624319164874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2279548547986627209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0265506dc7670d48b5f0ef274568dc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priority: 9
+  newObjective: Get the Grappling Hook
