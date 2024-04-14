@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 546e557c59bed834ca69db9c5ff071ef
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - difficultySetting: {instanceID: 0}
+  - monsterNavMeshAgent: {fileID: 8568769717320806197, guid: c217789bd399bde45ad9aa7b30e5d4e5,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
