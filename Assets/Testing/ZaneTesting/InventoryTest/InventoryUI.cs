@@ -43,7 +43,7 @@ public class InventoryUI : MonoBehaviour
 
     void PostPlay()
     {
-        itemsParent.gameObject.SetActive(true);
+        //itemsParent.gameObject.SetActive(true);
         show = true;
     }
 
@@ -61,6 +61,14 @@ public class InventoryUI : MonoBehaviour
             slots[i].Additem(InventorySystem.Instance.inventory[i].Data);
         }
 
+        if (slots.Count >= 1)
+        {
+            itemsParent.gameObject.SetActive(true);
+        }
+        else
+        {
+            itemsParent.gameObject.SetActive(false);
+        }
 
         //for (int i = 0; i < slots.Length; i++)
         //{

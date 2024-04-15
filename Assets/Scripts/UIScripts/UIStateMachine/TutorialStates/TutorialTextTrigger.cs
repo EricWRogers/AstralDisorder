@@ -32,7 +32,6 @@ public class TutorialTextTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Picking up player");
             switch (triggerType)
             {
                 case TriggerType.Move:
@@ -64,7 +63,7 @@ public class TutorialTextTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            TimerManager.Instance.CreateTimer(lingerTime, () => tutorialController.ChangeState(tutorialController.nullState));
+            //TimerManager.Instance.CreateTimer(lingerTime, () => tutorialController.ChangeState(tutorialController.nullState));
             if (oneTime)
             {
                 gameObject.SetActive(false);
@@ -74,6 +73,8 @@ public class TutorialTextTrigger : MonoBehaviour
             {
                 exitDialogue.TriggerDialogue();
             }
+
+            tutorialController.ChangeState(tutorialController.nullState);
         }
     }
 }
