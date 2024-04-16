@@ -49,7 +49,7 @@ public class NumberWheel : MonoBehaviour
 
     public void WheelExit()
     {
-        anim.SetBool("WheelExit", false);
+        anim.SetBool("WheelSelect", false);
         itemText.text = "";
     }
 }
