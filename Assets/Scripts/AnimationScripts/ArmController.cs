@@ -7,6 +7,7 @@ public class ArmController : MonoBehaviour
     private string currentState;
     [HideInInspector]
     public Animator anim;
+    public GameObject grappleModel;
 
     public static ArmController Instance;
 
@@ -21,6 +22,22 @@ public class ArmController : MonoBehaviour
     private void Start()
     {
         anim = GetComponent<Animator>();
+    }
+
+
+    public void EnableGrapple()
+    {
+        foreach(var transform in GetComponentsInChildren<Transform>(true))
+        {
+            transform.gameObject.layer = LayerMask.NameToLayer("Weapon");
+        }
+
+        grappleModel.SetActive(true);
+    }
+
+    public void DisableGrapple()
+    {
+        grappleModel.SetActive(false);
     }
 
     public void ChangeAnimationState(string newState)

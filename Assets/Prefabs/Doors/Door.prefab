@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5957529509745559602}
-  - component: {fileID: 6089742293991154590}
+  - component: {fileID: 4116298104951757668}
   m_Layer: 16
   m_Name: Door
   m_TagString: Untagged
@@ -27,13 +27,13 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.6699373, y: 2.5764754, z: -8.588273}
-  m_LocalScale: {x: 1.221, y: 1.221, z: 1.221}
+  m_LocalScale: {x: 0.8756523, y: 0.8756523, z: 0.8756523}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4433280111679137937}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6089742293991154590
+--- !u!114 &4116298104951757668
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,24 +42,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2570176306390025743}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7af0077a6a36f8643a402a6a16ecea5a, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b0d08dd4c051c7459051bd15cb921eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
-  contactRadius: 3
-  interactText: to Interact
-  uninteractableText: 
-  onInteract:
-    m_PersistentCalls:
-      m_Calls: []
-  onHover:
-    m_PersistentCalls:
-      m_Calls: []
-  canInteract: 1
   doorPivot: {fileID: 4433280111679137937}
-  unlockItem: {fileID: 0}
-  startInteractable: 1
-  useKeypad: 0
   trigger: {fileID: 5831361262090097920}
 --- !u!1 &3126034712337448516
 GameObject:
@@ -187,7 +173,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 687453469678548472}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 93a86db3a9c4bcb488bcb801bd08231d, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -346,10 +332,23 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 305f9b59c4dc4aa48a500b1a0dc6a7ea,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 305f9b59c4dc4aa48a500b1a0dc6a7ea,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2416208966727189444}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 305f9b59c4dc4aa48a500b1a0dc6a7ea,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6143133670015050289}
   m_SourcePrefab: {fileID: 100100000, guid: 305f9b59c4dc4aa48a500b1a0dc6a7ea, type: 3}
 --- !u!4 &3513405521870791589 stripped
 Transform:
@@ -357,3 +356,46 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3983617250173928526}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4290187828638349599 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 305f9b59c4dc4aa48a500b1a0dc6a7ea,
+    type: 3}
+  m_PrefabInstance: {fileID: 3983617250173928526}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2416208966727189444
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4290187828638349599}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.595342, y: 2.4975352, z: 0.29640374}
+  m_Center: {x: -0.000003874302, y: -0.0000008940697, z: -0.0000019073486}
+--- !u!208 &6143133670015050289
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4290187828638349599}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.79800004, y: 1.2490001, z: 0.148}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5

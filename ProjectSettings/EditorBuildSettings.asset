@@ -5,10 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/Build/MainBuildScene.unity
-    guid: a571855a33b76354abc410b5b5f29f8d
   - enabled: 1
-    path: Assets/Testing/BenTesting/MainBuildScene.unity
+    path: Assets/Scenes/Build/MainBuildScene.unity
     guid: 8f46e8d6b1a9cfb40909c36b1f5a48a6
+  - enabled: 1
+    path: Assets/Scenes/Build/Tutorial.unity
+    guid: d574128e828c5b845b3d52fb753d9671
+  - enabled: 1
+    path: Assets/Scenes/Build/Hub.unity
+    guid: f6857973219216c4eb36027031559da6
+  - enabled: 1
+    path: Assets/Scenes/Build/ControlStation.unity
+    guid: 6ef72080684294241b5988bac1cc2e58
+  - enabled: 1
+    path: Assets/Scenes/Build/CrewQuarters.unity
+    guid: 036391fc46719764594c28a016804bb8
   m_configObjects: {}

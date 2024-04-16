@@ -1145,6 +1145,94 @@ MonoBehaviour:
     onSoundComplete:
       m_PersistentCalls:
         m_Calls: []
+  - name: EscapePodLaunch
+    clip: {fileID: 8300000, guid: 0fad95775a87cdf4e93f7d4b88179652, type: 3}
+    volume: 0.62
+    priority: 128
+    pitch: 1
+    spatialBlend: 0
+    panStereo: 0
+    reverbZoneMix: 0
+    loop: 0
+    playOnAwake: 0
+    dopplerLevel: 0
+    spread: 0
+    rolloffMode: 2
+    minDistance: 5
+    maxDistance: 10
+    outputAudioMixerGroup: {fileID: 984036387255793970, guid: 783c11f117fc01b48a745ba2c2dc3e9e,
+      type: 2}
+    reverbPreset: 0
+    reverb:
+      dryLevel: 0
+      room: 0
+      roomHF: 0
+      roomLF: 0
+      decayTime: 0
+      decayHFRatio: 0
+      reflectionsLevel: 0
+      reflectionsDelay: 0
+      hfReference: 0
+      lfReference: 0
+      diffusion: 0
+      density: 0
+      reverbDelay: 0
+    useEcho: 0
+    echo:
+      delay: 0
+      decayRatio: 0
+      dryMix: 0
+      wetMix: 0
+    useDistortion: 0
+    distortion:
+      distortionLevel: 0
+    onSoundComplete:
+      m_PersistentCalls:
+        m_Calls: []
+  - name: CreditsBGM
+    clip: {fileID: 8300000, guid: 98012baf636f32944a433cf5fe2962c5, type: 3}
+    volume: 0.446
+    priority: 128
+    pitch: 1
+    spatialBlend: 0
+    panStereo: 0
+    reverbZoneMix: 0
+    loop: 1
+    playOnAwake: 0
+    dopplerLevel: 0
+    spread: 0
+    rolloffMode: 2
+    minDistance: 5
+    maxDistance: 10
+    outputAudioMixerGroup: {fileID: -7690333013256790993, guid: 783c11f117fc01b48a745ba2c2dc3e9e,
+      type: 2}
+    reverbPreset: 0
+    reverb:
+      dryLevel: 0
+      room: 0
+      roomHF: 0
+      roomLF: 0
+      decayTime: 0
+      decayHFRatio: 0
+      reflectionsLevel: 0
+      reflectionsDelay: 0
+      hfReference: 0
+      lfReference: 0
+      diffusion: 0
+      density: 0
+      reverbDelay: 0
+    useEcho: 0
+    echo:
+      delay: 0
+      decayRatio: 0
+      dryMix: 0
+      wetMix: 0
+    useDistortion: 0
+    distortion:
+      distortionLevel: 0
+    onSoundComplete:
+      m_PersistentCalls:
+        m_Calls: []
   poolSize: 50
   sources: []
 --- !u!1 &3896616874456746816
@@ -1196,6 +1284,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullscreen: 0
   fullscreenExitState: {fileID: 0}
+  mouseLook: {fileID: 0}
 --- !u!114 &4122449916723547077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1238,7 +1327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fullscreen: 1
-  fullscreenExitState: {fileID: 4122449916723547077}
+  fullscreenExitState: {fileID: 0}
   settingsGroup: {fileID: 0}
   displayGroup: {fileID: 0}
 --- !u!1 &7561090201023249777
@@ -1259,9 +1348,10 @@ GameObject:
   - component: {fileID: 2993984963616570827}
   - component: {fileID: 386592822236272342}
   - component: {fileID: 5703630940273076322}
+  - component: {fileID: 7223411636081840805}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1309,6 +1399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afb6b95890d281c4eaeef08b823762d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: []
 --- !u!114 &6750250712418728642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1382,17 +1473,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   winWaitTime: 1
-  wireOnMaterial: {fileID: 0}
+  wireOnMaterial: {fileID: 2100000, guid: 61ff69e0012b5aa4f891b781f36b4125, type: 2}
+  doorLight: {fileID: 0}
   LightObjects:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  finalWires:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  finalWires: []
+  - {fileID: 0}
+  - {fileID: 0}
   LightPuzzleCompleted:
     m_PersistentCalls:
       m_Calls:
@@ -1421,7 +1515,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   completeLight: {fileID: 0}
-  lightColor: {r: 0, g: 0, b: 0, a: 0}
+  lightColor: {r: 0, g: 0.7490196, b: 0.02745098, a: 1}
 --- !u!114 &386592822236272342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1434,7 +1528,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 546e557c59bed834ca69db9c5ff071ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  difficultySetting: {fileID: 5703630940273076322}
+  monsterNavMeshAgent: {fileID: 0}
+  easySpeed: 3
+  mediumSpeed: 6
+  hardSpeed: 7
+  extremeSpeed: 9
 --- !u!114 &5703630940273076322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1448,3 +1546,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentDifficulty: 1
+--- !u!114 &7223411636081840805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7561090201023249777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3463440984b6fde43bbc2831d3e68dba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

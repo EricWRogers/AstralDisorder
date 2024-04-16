@@ -66,6 +66,12 @@ public class FPSMelee : MonoBehaviour
                     frac.CauseFracture(-hit.normal);
                     Instantiate(sparks, hit.point, Random.rotation);
                 }
+
+                else if (hit.transform.TryGetComponent<HitToPush>(out var pushable))
+                {
+                    pushable.Push(-hit.normal);
+                    Instantiate(sparks, hit.point, Random.rotation);
+                }
             }
             if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit2, attackDistance, ~(1 << LayerMask.NameToLayer("TriggerZone"))))
             {
@@ -76,6 +82,7 @@ public class FPSMelee : MonoBehaviour
             {
                 AudioManager.Instance.Play("Whiff");
             }
+
             if (attackCount == 0)
             {
                 ArmController.Instance.ChangeAnimationState("Attack 1");
