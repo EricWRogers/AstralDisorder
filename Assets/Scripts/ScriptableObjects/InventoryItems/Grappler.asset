@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: Grappler
   displayName: Grappler
-  icon: {fileID: 21300000, guid: 618b13aa92b473f41869a9825a87ce26, type: 3}
+  icon: {fileID: 21300000, guid: b7a641e4f8523284b96b94c1d4434c88, type: 3}
   prefab: {fileID: 0}
   onAddToInventory:
     m_PersistentCalls:
