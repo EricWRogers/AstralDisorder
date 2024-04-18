@@ -1,12 +1,6 @@
 using UnityEngine;
 
-public enum Difficulty
-{
-    Easy,
-    Normal,
-    Hard,
-    Extreme
-}
+
 
 public class DifficultySetting : MonoBehaviour
 {

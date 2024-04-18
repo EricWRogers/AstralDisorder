@@ -53,7 +53,7 @@ public class AIPatrolState : MonoBehaviour, IEnemyState //Every state must inher
     {
         anim.SetFloat("Slink", 0);
         Debug.Log("Exiting Patrol State");
-
+        agent.speed = DifficultySelector.Instance.currentSpeed;
     }
 
 

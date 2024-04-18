@@ -12,35 +12,25 @@ public class StaminaPickup : Interactable
         base.OnInteract();
         var player = OmnicatLabs.CharacterControllers.CharacterController.Instance;
 
-        // Get the current difficulty level
-        Difficulty? difficulty = FindObjectOfType<DifficultySetting>()?.currentDifficulty;
+        // Determine the stamina value based on difficulty
+        float staminaValue = GetStaminaValue();
 
-        if (difficulty != null)
+        if (player.currentStamina + staminaValue > player.maxStamina)
         {
-            // Determine the stamina value based on difficulty
-            float staminaValue = GetStaminaValue(difficulty.Value);
-
-            if (player.currentStamina + staminaValue > player.maxStamina)
-            {
-                player.ChangeStamina(player.maxStamina);
-            }
-            else
-            {
-                player.ChangeStamina(player.currentStamina + staminaValue);
-            }
+            player.ChangeStamina(player.maxStamina);
         }
         else
         {
-            Debug.LogError("DifficultySetting script not found in the scene.");
+            player.ChangeStamina(player.currentStamina + staminaValue);
         }
 
         Destroy(gameObject.transform.parent.gameObject);
     }
 
     // Function to get stamina value based on difficulty level
-    private float GetStaminaValue(Difficulty difficulty)
+    private float GetStaminaValue()
     {
-        switch (difficulty)
+        switch (DifficultySelector.Instance.currentDifficulty)
         {
             case Difficulty.Easy:
                 return easyStaminaValue;
