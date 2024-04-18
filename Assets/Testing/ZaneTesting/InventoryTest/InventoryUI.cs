@@ -49,16 +49,33 @@ public class InventoryUI : MonoBehaviour
 
     void UpdateUI()
     {
+        if (InventorySystem.Instance.inventory.Count == 0)
+        {
+            foreach (var slot in slots)
+            {
+                Destroy(slot.gameObject);
+            }
+            slots.Clear();
+        }
+
         for (int i = 0; i < InventorySystem.Instance.inventory.Count; i++)
         {
-            if (slots.Count < i + 1)
+            if (slots.Count < InventorySystem.Instance.inventory.Count)
             {
                 var newSlot = Instantiate(slotPrefab, itemsParent);
                 slots.Add(newSlot.GetComponent<InventorySlot>());
             }
+            else if (slots.Count > InventorySystem.Instance.inventory.Count)
+            {
+                Destroy(slots[i]);
+                slots.RemoveAt(i);
+            }
 
-            slots[i].GetComponentInChildren<Image>().enabled = true;
-            slots[i].Additem(InventorySystem.Instance.inventory[i].Data);
+            if (slots.Count == InventorySystem.Instance.inventory.Count)
+            {
+                slots[i].GetComponentInChildren<Image>().enabled = true;
+                slots[i].Additem(InventorySystem.Instance.inventory[i].Data);
+            }
         }
 
         if (slots.Count >= 1)
@@ -69,20 +86,5 @@ public class InventoryUI : MonoBehaviour
         {
             itemsParent.gameObject.SetActive(false);
         }
-
-        //for (int i = 0; i < slots.Length; i++)
-        //{
-        //    if (i < InventorySystem.Instance.inventory.Count)
-        //    {
-        //        if (slots[i].icon.enabled == false)
-        //        {
-        //            slots[i].GetComponentInChildren<Image>().enabled = true;
-        //            Debug.Log("Revealed");
-        //        }
-
-        //        slots[i].Additem(InventorySystem.Instance.inventory[i].Data);
-        //    }
-
-        //}
     }
 }

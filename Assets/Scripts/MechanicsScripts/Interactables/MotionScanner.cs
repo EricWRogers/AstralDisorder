@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using OmnicatLabs.Tween;
 using OmnicatLabs.Audio;
+using OmnicatLabs.Events;
 
 public class MotionScanner : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class MotionScanner : MonoBehaviour
     public bool doorOpened = false;
     public bool doorClosed = true;
     public static MotionScanner lastDoorOpened;
+    private UnityEvent onLoadComplete;
 
     private void Start()
     {
@@ -73,13 +75,15 @@ public class MotionScanner : MonoBehaviour
         doorClosed = true;
         if (airLockZone.playerIsHere && otherDoor.doorClosed)
         {
-            LoadManager.ChangeScenes(sceneToLoad, sceneToUnload).AddListener(OnLoadDone);
+            onLoadComplete = LoadManager.ChangeScenes(sceneToLoad, sceneToUnload);
+            onLoadComplete.AddListener(OnLoadDone);
         }
     }
 
     private void OnLoadDone()
     {
         otherDoor.Open();
+        onLoadComplete.RemoveListener(OnLoadDone);
     }
 
     private void OnDoorOpen()
