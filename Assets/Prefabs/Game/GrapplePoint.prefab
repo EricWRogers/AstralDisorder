@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectionRadius: 25
-  hideDistance: 7
+  hideDistance: 4
   toggleObject: {fileID: 8968898073387636942}
   scalingImage: {fileID: 7184494144537835770}
   validObstaceFilter:
