@@ -12,6 +12,8 @@ public class NumberWheel : MonoBehaviour
     private bool selected = false;
     public Sprite icon;
 
+    //icon is unused and allows for an connected image to be displayed
+    //itemText is similar but for text 
 
 
 
