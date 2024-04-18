@@ -23,6 +23,11 @@ public class TutorialTextTrigger : MonoBehaviour
     public bool oneTime = false;
     public Dialogue exitDialogue;
 
+    private void Start()
+    {
+        tutorialController = GameObject.FindGameObjectWithTag("TutorialManager").GetComponent<UIStateMachineController>();
+    }
+
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -58,7 +63,7 @@ public class TutorialTextTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            TimerManager.Instance.CreateTimer(lingerTime, () => tutorialController.ChangeState(tutorialController.nullState));
+            //TimerManager.Instance.CreateTimer(lingerTime, () => tutorialController.ChangeState(tutorialController.nullState));
             if (oneTime)
             {
                 gameObject.SetActive(false);
@@ -68,6 +73,8 @@ public class TutorialTextTrigger : MonoBehaviour
             {
                 exitDialogue.TriggerDialogue();
             }
+
+            tutorialController.ChangeState(tutorialController.nullState);
         }
     }
 }

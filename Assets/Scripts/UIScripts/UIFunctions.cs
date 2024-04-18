@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.AI;
 
 public class UIFunctions : MonoBehaviour
 {
@@ -23,6 +24,8 @@ public class UIFunctions : MonoBehaviour
         SaveManager.Instance.ResetTracked();
         player.transform.position = Checkpoint.spawnpoint.position;
         player.transform.rotation = Checkpoint.spawnpoint.rotation;
+        MotionScanner.lastDoorOpened.Open();
+        GameObject.FindGameObjectWithTag("Enemy").GetComponentInChildren<NavMeshAgent>().speed = DifficultySelector.Instance.currentSpeed;
     }
 
     public void Quit()

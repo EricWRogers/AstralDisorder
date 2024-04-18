@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   contactRadius: 4
-  interactText: to Equip Jump Boots
+  interactText: to Equip Wall Stick Boots
   uninteractableText: 
   onInteract:
     m_PersistentCalls:
@@ -60,7 +60,8 @@ MonoBehaviour:
       m_Calls: []
   canInteract: 1
   rotationSpeed: 45
-  UpgradeID: 0
+  UpgradeID: 1
+  item: {fileID: 11400000, guid: dc048c4893fc1fb4db06708178338e59, type: 2}
 --- !u!114 &4996484266586412625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,7 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ab5d83f396c96047921672a1669f452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  message: Alright! With these I can finally get outta here.
+  message: Surely there must be some place I could reach with this.
   oneTime: 0
   timeShown: 7
   lockoutTime: 7

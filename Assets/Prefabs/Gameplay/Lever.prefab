@@ -91,7 +91,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 823469306601965709}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 93a86db3a9c4bcb488bcb801bd08231d, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -188,7 +188,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8331699286804034923
 Transform:
@@ -262,7 +262,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5024165825466596171}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 93a86db3a9c4bcb488bcb801bd08231d, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

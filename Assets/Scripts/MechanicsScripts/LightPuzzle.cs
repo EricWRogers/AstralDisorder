@@ -8,6 +8,7 @@ public class LightPuzzle : MonoBehaviour
     public float winWaitTime = 1f;
     public Material wireOnMaterial;
     private Material wireOffMaterial;
+    public LightPuzzleLights doorLight;
     public List<GameObject> LightObjects = new List<GameObject>();
     public List<GameObject> finalWires = new List<GameObject>();
     public UnityEvent LightPuzzleCompleted = new UnityEvent();
@@ -48,7 +49,7 @@ public class LightPuzzle : MonoBehaviour
     private void Win()
     {
         bool puzzleCompleted = true;
-
+        Debug.Log("Called win");
         for (int i = 0; i < LightObjects.Count; i++)
         {
             if (LightObjects[i].GetComponentInChildren<LightPuzzleLights>().lit == false)
@@ -63,6 +64,8 @@ public class LightPuzzle : MonoBehaviour
             completeLight.GetComponentInChildren<Light>().color = lightColor;
 
             LightPuzzleCompleted.Invoke();
+
+            doorLight.ChangeLightState();
 
             foreach (var wire in finalWires)
             {

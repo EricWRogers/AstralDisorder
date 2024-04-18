@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: Plasmatorch
   displayName: GravHammer
-  icon: {fileID: 21300000, guid: 809337b83af54924b96153ddd1a6aef6, type: 3}
+  icon: {fileID: 21300000, guid: 43a62803b3e47234382d657569ada02d, type: 3}
   prefab: {fileID: 6081094488805106698, guid: feae37d2e100dc44081fa94c4315991e, type: 3}
   onAddToInventory:
     m_PersistentCalls:

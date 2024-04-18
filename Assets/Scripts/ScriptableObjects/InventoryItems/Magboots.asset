@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: MagBootsUpgrade
   displayName: Magboots
-  icon: {fileID: 21300000, guid: 94a691e0138832a479cd372859902881, type: 3}
+  icon: {fileID: 21300000, guid: 71d1138ab95142b4081275bb5f129cfc, type: 3}
   prefab: {fileID: 4034895537341688813, guid: 1216f8aedb7209643b623630ba8c9352, type: 3}
   onAddToInventory:
     m_PersistentCalls:
