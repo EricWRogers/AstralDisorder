@@ -38,9 +38,7 @@ public class KeypadUIController : MonoBehaviour
 
     public void AdjustTimeScale()
     {
-        Difficulty? difficulty = FindObjectOfType<DifficultySetting>()?.currentDifficulty;
-
-        switch (difficulty)
+        switch (DifficultySelector.Instance.currentDifficulty)
         {
             case (Difficulty.Easy):
                 Time.timeScale = 0.0f;

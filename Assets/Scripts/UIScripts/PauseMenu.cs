@@ -56,9 +56,8 @@ public class PauseMenu : MonoBehaviour
 
     public void Pause(InputAction.CallbackContext ctx)
     {
-        if (ctx.performed && gameStarted)
+        if (ctx.performed && gameStarted && controller.state.GetType() != typeof(HUDKeypadState))
         {
-            
             if (GameIsPaused)
             {
                 Resume();

@@ -12,16 +12,44 @@ public class InventorySystem : MonoBehaviour
 
     public delegate void OnItemChanged();
     public OnItemChanged onItemChangedCallBack;
+    private Dictionary<InventoryItemData, InventoryItem> savedDictionary = new Dictionary<InventoryItemData, InventoryItem>();
+
     private void Awake()
     {
         if (Instance == null)
             Instance = this;
+        SaveManager.Instance.onSave.AddListener(HandleSave);
+        SaveManager.Instance.onReset.AddListener(HandleReset);
     }
 
     private void Start()
     {
         m_itemDictionary = new Dictionary<InventoryItemData, InventoryItem>();
         inventory = new List<InventoryItem>();
+    }
+
+    private void HandleSave()
+    {
+        Debug.Log($"Saving Count: {inventory.Count}");
+        foreach(var item in m_itemDictionary)
+        {
+            if (!savedDictionary.ContainsKey(item.Key))
+            {
+                savedDictionary.Add(item.Key, item.Value);
+            }
+        }
+    }
+
+    private void HandleReset()
+    {
+        m_itemDictionary.Clear();
+        inventory.Clear();
+        foreach (var item in savedDictionary)
+        {
+            Add(item.Key);
+        }
+        Debug.Log($"Reset Count: {inventory.Count}");
+
     }
 
     public InventoryItem Get(InventoryItemData referenceData)

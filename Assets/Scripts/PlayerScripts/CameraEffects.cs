@@ -7,6 +7,8 @@ public class CameraEffects : MonoBehaviour
     public float FOVTransitionTime = .25f;
     public float TiltTransitionTime = 1.2f;
 
+    [HideInInspector]
+    public float standardFOV;
     private Camera cam;
     private CinemachineVirtualCamera vCam;
 
@@ -14,6 +16,13 @@ public class CameraEffects : MonoBehaviour
     {
         cam = GetComponentInChildren<Camera>();
         vCam = GetComponentInChildren<CinemachineVirtualCamera>();
+        standardFOV = vCam.m_Lens.FieldOfView;
+    }
+
+    //Set from FOV slider in settings
+    public void SetStandardFOV(float FOV)
+    {
+        standardFOV = FOV;
     }
 
     public void AdjustFOV(float newFOV)
