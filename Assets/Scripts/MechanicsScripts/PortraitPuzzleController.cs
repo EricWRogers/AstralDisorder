@@ -6,6 +6,7 @@ using System.Linq;
 public class PortraitPuzzleController : MonoBehaviour
 {
     public List<GameObject> portaits = new List<GameObject>();
+    public List<Transform> portraitPositions = new List<Transform>();
     public int totalPortraits;
     public SafeCodeGenerator generator;
     [HideInInspector]
@@ -20,7 +21,7 @@ public class PortraitPuzzleController : MonoBehaviour
         {
             //skip 0 because it is the parent object this script is on
             int randomPortraitIndex = Random.Range(0, tempPortraits.Count);
-            var portrait = Instantiate(tempPortraits[randomPortraitIndex], positions[i + 1].position, Quaternion.identity);
+            var portrait = Instantiate(tempPortraits[randomPortraitIndex], portraitPositions[i].position, Quaternion.identity);
 
             portrait.GetComponentInChildren<TextMeshProUGUI>().SetText($"{portrait.GetComponent<PortraitData>().firstName} {portrait.GetComponent<PortraitData>().lastName}\nStation Manager {i + 1}");
             portrait.GetComponent<PortraitData>().associatedNumber = i + 1;

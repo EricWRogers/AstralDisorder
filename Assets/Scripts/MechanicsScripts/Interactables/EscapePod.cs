@@ -12,6 +12,12 @@ public class EscapePod : MonoBehaviour
     public CameraShakeController shaker;
     public Animator credits;
     private bool unfurl = false;
+
+    private void Start()
+    {
+        shaker = OmnicatLabs.CharacterControllers.CharacterController.Instance.GetComponentInChildren<CameraShakeController>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))

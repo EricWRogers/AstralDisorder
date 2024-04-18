@@ -58,7 +58,7 @@ public class PauseMenu : MonoBehaviour
     {
         if (ctx.performed && gameStarted)
         {
-            playerHiddenState = OmnicatLabs.CharacterControllers.CharacterController.Instance.playerIsHidden;
+            
             if (GameIsPaused)
             {
                 Resume();
@@ -66,6 +66,7 @@ public class PauseMenu : MonoBehaviour
             else
             {
                 GameIsPaused = true;
+                playerHiddenState = OmnicatLabs.CharacterControllers.CharacterController.Instance.playerIsHidden;
                 OmnicatLabs.CharacterControllers.CharacterController.Instance.SetLockedNoDisable(true, true, true);
                 controller.ChangeState<HUDPauseState>();
                 DefaultSelectionController.Instance.ChangeSelection(defaultButton);

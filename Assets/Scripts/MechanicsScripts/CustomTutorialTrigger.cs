@@ -10,6 +10,8 @@ public class CustomTutorialTrigger : MonoBehaviour
 
     private void Start()
     {
+        controller = GameObject.FindGameObjectWithTag("TutorialManager").GetComponent<UIStateMachineController>();
+
         wall.callbackOptions.onFracture.AddListener((col, obj, vec) => {
             hasDestroyed = true;
             controller.ChangeState<TutorialCrouchState>();

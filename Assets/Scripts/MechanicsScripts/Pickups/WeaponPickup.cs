@@ -4,6 +4,7 @@ using OmnicatLabs.Audio;
 public class WeaponPickup : Interactable
 {
     public GameObject weaponPrefab;
+    public InventoryItemData itemData;
 
     protected override void OnHover()
     {
@@ -25,6 +26,7 @@ public class WeaponPickup : Interactable
         //to unhide the arms for the first time picking up a weapon. doesn't hurt to be called every time
         OmnicatLabs.CharacterControllers.CharacterController.Instance.SetControllerLocked(false, false, false);
         WeaponSwap.Instance.AddNewWeapon(weaponPrefab);
+        InventorySystem.Instance.Add(itemData);
 
         Destroy(gameObject);
     }
