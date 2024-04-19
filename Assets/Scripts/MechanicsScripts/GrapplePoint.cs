@@ -17,6 +17,7 @@ public class GrapplePoint : MonoBehaviour
     public LayerMask validObstaceFilter;
     public UIStateMachineController tutorialStateMachine;
     public Collider col;
+    public float castCheckRadius = 10f;
 
     private bool firstTime1 = true;
     private bool firstTime2 = true;
@@ -59,7 +60,7 @@ public class GrapplePoint : MonoBehaviour
             }
             else if (scalingImage.GetComponent<RectTransform>().localScale == maxScale)
             {
-                if (Physics.Raycast(transform.position, (player.transform.position - transform.position).normalized, out RaycastHit hit, Mathf.Infinity, validObstaceFilter) && hit.transform.CompareTag(player.tag))
+                if (Physics.Raycast(transform.position, (player.transform.position - transform.position).normalized, out RaycastHit hit, Mathf.Infinity, validObstaceFilter) && hit.transform.CompareTag(player.tag) && Physics.CapsuleCast(transform.position, (player.transform.position - transform.position).normalized, castCheckRadius, (player.transform.position - transform.position).normalized, Mathf.Infinity, validObstaceFilter))
                 {
                     toggleObject.SetActive(true);
                     scalingImage.color = Color.green;
