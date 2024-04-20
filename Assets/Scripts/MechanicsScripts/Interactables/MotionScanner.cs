@@ -2,7 +2,10 @@ using UnityEngine;
 using UnityEngine.Events;
 using OmnicatLabs.Tween;
 using OmnicatLabs.Audio;
+using OmnicatLabs.Timers;
 using OmnicatLabs.Events;
+using System.Collections.Generic;
+using System.Linq;
 
 public class MotionScanner : MonoBehaviour
 {
@@ -18,18 +21,21 @@ public class MotionScanner : MonoBehaviour
     public int sceneToLoad;
     [StringDropdown(EditorStringLists.BuildScenes)]
     public int sceneToUnload;
+    public float minWaitTime = 1.5f;
     public bool doorOpening = false;
     [HideInInspector]
     public bool doorOpened = false;
     public bool doorClosed = true;
     public static MotionScanner lastDoorOpened;
     private UnityEvent onLoadComplete;
+    private List<ParticleSystem> effects = new List<ParticleSystem>();
 
     private void Start()
     {
         onDoorClose.AddListener(OnDoorClose);
         onDoorOpen.AddListener(OnDoorOpen);
         doorTrigger.triggerCallback.AddListener(CheckPlayer);
+        effects = airLockZone.smokeParent.GetComponentsInChildren<ParticleSystem>().ToList();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -77,13 +83,22 @@ public class MotionScanner : MonoBehaviour
         {
             onLoadComplete = LoadManager.ChangeScenes(sceneToLoad, sceneToUnload);
             onLoadComplete.AddListener(OnLoadDone);
+            effects.ForEach(effect => effect.Play());
+            AudioManager.Instance.Play("SteamRelease");
         }
     }
 
     private void OnLoadDone()
     {
-        otherDoor.Open();
+        TimerManager.Instance.CreateTimer(minWaitTime, OnWaitDone);
         onLoadComplete.RemoveListener(OnLoadDone);
+    }
+
+    private void OnWaitDone()
+    {
+        otherDoor.Open();
+        effects.ForEach(effect => effect.Stop());
+        AudioManager.Instance.Stop("SteamRelease");
     }
 
     private void OnDoorOpen()
