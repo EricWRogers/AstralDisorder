@@ -28,7 +28,7 @@ public class AITransitionState : MonoBehaviour, IEnemyState //Every state must i
     {
         //Debug.Log("Entering Transition State");
         ResetAI(agent.gameObject, target);
-        stateMachine.SetState(gameObject.GetComponent<AIChaseState>());
+       
     }
 
     public void Exit() //Last thing the state does before sending us wherever the user specified in update.
@@ -66,9 +66,10 @@ public class AITransitionState : MonoBehaviour, IEnemyState //Every state must i
                 int currentAreaAI = ai.mask;
                 int closestTransHitAreaHit = closestTransHit.mask;
 
-                if (currentAreaAI != currentAreaPlayer && closestTransHitAreaHit == currentAreaPlayer)
+                if (currentAreaAI != currentAreaPlayer /*&& closestTransHitAreaHit == currentAreaPlayer*/)
                 {
                     _ai.GetComponent<NavMeshAgent>().Warp(closestTrans.transform.position);
+                    stateMachine.SetState(gameObject.GetComponent<AIChaseState>());
                 }
             }
         }
