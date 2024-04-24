@@ -42,6 +42,7 @@ public class AIStateMachine : MonoBehaviour //Dont touch this script.
 
         if(currentState == null) 
         {
+            Debug.Log("Current State Null");
             SetState(gameObject.GetComponent<AIIdleState>());
         }
         
