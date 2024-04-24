@@ -5,7 +5,8 @@ using UnityEngine.AI;
 
 public class AITransitionState : MonoBehaviour, IEnemyState //Every state must inherit from here.
 {
-    private AIStateMachine stateMachine;
+    [HideInInspector]
+    public AIStateMachine stateMachine;
     private NavMeshAgent agent;
     private GameObject target;
 

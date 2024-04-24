@@ -20,9 +20,9 @@ public class TransitionAI : MonoBehaviour
         {
             Debug.Log("Crossed");
             // GameObject temp = GetComponentInParent<NavMeshAgent>().gameObject;
-            
+            agent.GetComponent<NavMeshAgent>().areaMask = 1 << NavMesh.GetAreaFromName(area2);
             agent.GetComponent<NavMeshAgent>().Warp(exitTrans.position);
-            agent.GetComponent<NavMeshAgent>().areaMask = NavMesh.GetAreaFromName(area2);
+            agent.GetComponentInChildren<AITransitionState>().stateMachine.SetState(agent.GetComponentInChildren<AIChaseState>());
             //agent.transform.position = exitTrans.position;
             
             
