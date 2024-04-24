@@ -73,7 +73,6 @@ public class MotionScanner : MonoBehaviour
         doorPivot.TweenLocalYRotation(openAngle, timeToOpen, () => onDoorOpen.Invoke());
         doorOpened = true;
         doorClosed = false;
-        lastDoorOpened = this;
     }
 
     private void OnDoorClose()
@@ -97,6 +96,7 @@ public class MotionScanner : MonoBehaviour
     private void OnWaitDone()
     {
         otherDoor.Open();
+        lastDoorOpened = otherDoor;
         effects.ForEach(effect => effect.Stop());
         AudioManager.Instance.Stop("SteamRelease");
     }
