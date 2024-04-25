@@ -15,6 +15,8 @@ public class MonsterResetter : MonoBehaviour
     {
         //var transState = GetComponentInChildren<AITransitionState>();
         //Debug.Log(transState + "HEY");
+        GetComponent<NavMeshAgent>().areaMask = 1 << NavMesh.GetAreaFromName("Train Yard");
         GetComponent<NavMeshAgent>().Warp(resetPoint.position);
+	
     }
 }
