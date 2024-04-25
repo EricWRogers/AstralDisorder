@@ -7,6 +7,7 @@ public class LoadManager : MonoBehaviour
 {
     private static LoadManager Instance;
     private UnityEvent onComplete = new UnityEvent();
+    public static bool isLoading;
 
     private void Awake()
     {
@@ -29,6 +30,7 @@ public class LoadManager : MonoBehaviour
     {
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(loadIndex, LoadSceneMode.Additive);
         AsyncOperation asyncUnload = SceneManager.UnloadSceneAsync(unloadIndex);
+        isLoading = true;
 
         while (!asyncLoad.isDone || !asyncUnload.isDone)
         {
@@ -36,5 +38,6 @@ public class LoadManager : MonoBehaviour
         }
 
         onComplete.Invoke();
+        isLoading = false;
     }
 }
