@@ -130,6 +130,7 @@ public class AIChaseState : MonoBehaviour, IEnemyState
 
         if (ai.mask != player.mask)
         {
+            Debug.Log("Transitionable");
             return true;
         }
         else

@@ -15,7 +15,9 @@ public class AITransitionState : MonoBehaviour, IEnemyState //Every state must i
     private Animator anim;
     public void Enter(AIStateMachine stateMachine) //First thing the state does.
     {
+        
         anim = GetComponent<AIStateMachine>().anim;
+        anim.SetFloat("Sprint", 1);
         this.stateMachine = stateMachine;
         //Debug.Log("Entering Idle State");
         //agent = GetComponentInParent<NavMeshAgent>();
@@ -34,6 +36,7 @@ public class AITransitionState : MonoBehaviour, IEnemyState //Every state must i
 
     public void Exit() //Last thing the state does before sending us wherever the user specified in update.
     {
+        anim.SetFloat("Sprint", 0);
         agent.stoppingDistance = 0.3f;
         agent.speed = DifficultySelector.Instance.currentSpeed;
         //Debug.Log("Exiting Transition State");
@@ -82,7 +85,7 @@ public class AITransitionState : MonoBehaviour, IEnemyState //Every state must i
                     agent.speed = 10f;
 
                     float dis = Vector3.Distance(gameObject.transform.position, closestTrans.transform.position);
-                    Debug.Log("Dis: " + dis);
+                    //Debug.Log("Dis: " + dis);
 
                     if(dis < 0.1f)
                     {

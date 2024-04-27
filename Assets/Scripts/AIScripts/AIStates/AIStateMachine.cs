@@ -14,8 +14,10 @@ public interface IEnemyState //Make the states inherit from this. Basically will
 
 public class AIStateMachine : MonoBehaviour //Dont touch this script.
 {
+    public string state;
     public Animator anim;
-    [HideInInspector]
+    //[HideInInspector]
+    [SerializeField]
     public IEnemyState currentState; //DONT TOUCH 
 
     private NavMeshAgent agent;
@@ -28,6 +30,7 @@ public class AIStateMachine : MonoBehaviour //Dont touch this script.
 
     private void Update()
     {
+        state = currentState.ToString();
         Debug.Log($"Monster State: {currentState}");
         //stateVisualizer.text = currentState.ToString(); //Testing
 
