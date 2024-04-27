@@ -71,7 +71,7 @@ public class AITransitionState : MonoBehaviour, IEnemyState //Every state must i
                 int currentAreaAI = ai.mask;
                 int closestTransHitAreaHit = closestTransHit.mask;
 
-                if (currentAreaAI != currentAreaPlayer /*&& closestTransHitAreaHit != currentAreaPlayer*/)
+                if (currentAreaAI != currentAreaPlayer && !LoadManager.isLoading /*&& closestTransHitAreaHit != currentAreaPlayer*/)
                 {
                     //_ai.GetComponent<NavMeshAgent>().Warp(closestTrans.transform.position);
 

@@ -23,6 +23,7 @@ public class WeaponPickup : Interactable
         {
             changeObjective.Change();
         }
+
         //to unhide the arms for the first time picking up a weapon. doesn't hurt to be called every time
         OmnicatLabs.CharacterControllers.CharacterController.Instance.SetControllerLocked(false, false, false);
         WeaponSwap.Instance.AddNewWeapon(weaponPrefab);
