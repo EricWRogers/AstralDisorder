@@ -43,7 +43,7 @@ public class AIChaseState : MonoBehaviour, IEnemyState
 
     public void Run() //Good ol update
     {
-        LOS.transform.LookAt(target.transform.position);
+        //LOS.transform.LookAt(target.transform.position);
 
         if (ValidatePath(target))
         {
