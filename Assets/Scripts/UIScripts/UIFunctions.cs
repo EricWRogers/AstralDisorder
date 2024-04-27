@@ -9,7 +9,8 @@ public class UIFunctions : MonoBehaviour
 
     public void Reload()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(0);
+        InventorySystem.Instance.Empty();
     }
 
     public void Retry()

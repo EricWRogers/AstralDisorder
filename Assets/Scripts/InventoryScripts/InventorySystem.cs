@@ -106,6 +106,12 @@ public class InventorySystem : MonoBehaviour
             onItemChangedCallBack.Invoke();
     }
 
+    public void Empty()
+    {
+        m_itemDictionary.Clear();
+        inventory.Clear();
+    }
+
 }
 [Serializable]
 public class InventoryItem
