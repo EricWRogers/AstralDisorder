@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
@@ -63,8 +62,6 @@ public class InventoryUI : MonoBehaviour
             Destroy(slot.gameObject);
         }
         slots.Clear();
-
-        Debug.Log(slots.Count);
 
         foreach (var item in InventorySystem.Instance.inventory)
         {

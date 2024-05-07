@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 public class RandNumGen : MonoBehaviour
@@ -21,7 +18,7 @@ public class RandNumGen : MonoBehaviour
     public virtual void Generate()
     {
         RandNum = Random.Range(1111, 9999).ToString();
-        Debug.Log(RandNum);
+        //Debug.Log(RandNum);
         numText.SetText(RandNum.ToString());
     }
 }
