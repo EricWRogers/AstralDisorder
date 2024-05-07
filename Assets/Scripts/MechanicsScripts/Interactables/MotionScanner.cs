@@ -81,6 +81,7 @@ public class MotionScanner : MonoBehaviour
         if (airLockZone.playerIsHere && otherDoor.doorClosed)
         {
             onLoadComplete = LoadManager.ChangeScenes(sceneToLoad, sceneToUnload);
+            //otherDoor.doorTrigger.enabled = false;
             onLoadComplete.AddListener(OnLoadDone);
             effects.ForEach(effect => effect.Play());
             AudioManager.Instance.Play("SteamRelease");
@@ -103,6 +104,6 @@ public class MotionScanner : MonoBehaviour
 
     private void OnDoorOpen()
     {
-        
+        //otherDoor.doorTrigger.enabled = true;
     }
 }

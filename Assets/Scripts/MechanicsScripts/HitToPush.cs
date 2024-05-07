@@ -16,6 +16,7 @@ public class HitToPush : MonoBehaviour
     private List<Vector3> startingPositions = new List<Vector3>();
     private List<Vector3> startingScales = new List<Vector3>();
     private List<Quaternion> startingRotations = new List<Quaternion>();
+    private LayerMask startingLayer;
 
     private void Start()
     {
@@ -23,6 +24,7 @@ public class HitToPush : MonoBehaviour
         startingPositions.AddRange(GetComponentsInChildren<Transform>().ToList().Select(trans => trans.localPosition));
         startingScales.AddRange(GetComponentsInChildren<Transform>().ToList().Select(trans => trans.localScale));
         startingRotations.AddRange(GetComponentsInChildren<Transform>().ToList().Select(trans => trans.localRotation));
+        startingLayer = gameObject.layer;
         //SaveManager.Instance.Track(this);
         //Find the science to explain this later
         SaveManager.Instance.onReset.AddListener(OnReset);
@@ -37,6 +39,7 @@ public class HitToPush : MonoBehaviour
             rb.GetComponent<Collider>().isTrigger = false;
             rb.useGravity = true;
             rb.AddForce(impactDirection * pushForce, ForceMode.Impulse);
+            piece.layer = LayerMask.NameToLayer("FracturePiece");
         }
         GetComponent<BoxCollider>().enabled = false;
         TimerManager.Instance.CreateTimer(lifetime, Shrink);
@@ -66,6 +69,7 @@ public class HitToPush : MonoBehaviour
                 rb.useGravity = false;
                 rb.velocity = Vector3.zero;
                 rb.GetComponent<Collider>().isTrigger = true;
+                allObjs[i].layer = startingLayer;
             }
             allObjs[i].transform.localPosition = startingPositions[i];
             allObjs[i].transform.localScale = startingScales[i];
