@@ -13,7 +13,6 @@ public class KeypadUIController : MonoBehaviour
     private float timeAfterSubmit = .5f;
     private string input;
     private float buttonCount = 0;
-    private float guesses;
     [HideInInspector]
     public string correctPass;
     public GameObject keypadUI;
@@ -30,8 +29,7 @@ public class KeypadUIController : MonoBehaviour
     {
         //correctPass = "123";
         //correctPass = FindObjectOfType<RandNumGen>().RandNum.ToString();
-        guesses = correctPass.Length;
-        Debug.Log(correctPass);
+        //Debug.Log(correctPass);
 
         AdjustTimeScale();
     }
@@ -128,26 +126,6 @@ public class KeypadUIController : MonoBehaviour
             }
         }
     }
-
-    //void Update()
-    //{
-    //    if (buttonCount == guesses)
-    //    {
-    //        if (input == correctPass)
-    //        {
-    //            displayText.text = "<color=#15F00B>" + input.ToString();
-    //            buttonCount = 0;
-    //            Debug.Log("Correct");
-    //            onCorrectPassword.Invoke();
-    //        }
-    //        else
-    //        {
-    //            displayText.text = "<color=#F00B0B>" + input.ToString();
-    //            //wrongTimer.StartTimer(wrongTimer.countDownTime, wrongTimer.autoRestart);
-    //            buttonCount = 0;
-    //        }
-    //    }
-    //}
 
     public void ClearInput()
     {

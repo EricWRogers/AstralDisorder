@@ -1,15 +1,8 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class HUDPauseState : UIState
 {
     public CanvasGroup pauseGroup;
-    private bool gameStarted = false;
-
-    private void PostPlay()
-    {
-        gameStarted = true;
-    }
 
     public override void OnStateEnter(UIStateMachineController controller)
     {
