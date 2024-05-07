@@ -11,6 +11,6 @@ public class DifficultySetting : MonoBehaviour
     private void Awake()
     {
         // Ensure the GameManager persists between scenes
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
 }
