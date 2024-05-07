@@ -20,8 +20,9 @@ public class AIChaseState : MonoBehaviour, IEnemyState
 
     //public void SetAgentSpeed(float speed)
     //{
-        //agentSpeed = speed;
+    //agentSpeed = speed;
     //}
+
 
     public void Enter(AIStateMachine stateMachine) //First thing the state does.
     {
@@ -42,6 +43,7 @@ public class AIChaseState : MonoBehaviour, IEnemyState
 
     public void Run() //Good ol update
     {
+        //LOS.transform.LookAt(target.transform.position);
 
         if (ValidatePath(target))
         {
@@ -53,15 +55,16 @@ public class AIChaseState : MonoBehaviour, IEnemyState
         }
         else if (Attackable(target) && characterController.isGrounded == true)
         {
+          
             stateMachine.SetState(gameObject.GetComponent<AIAttackState>());
         }
-      
+
         else if (characterController.isGrounded == true) //Prevent the AI from randomly patrolling while I am b hopping thru da club
         {
             stateMachine.SetState(gameObject.GetComponent<AIPatrolState>());
         }
 
-       
+
     }
 
     public void Exit() //Last thing the state does before sending us wherever the user specified in update.
@@ -78,7 +81,7 @@ public class AIChaseState : MonoBehaviour, IEnemyState
             target = GameObject.FindAnyObjectByType<OmnicatLabs.CharacterControllers.CharacterController>().gameObject;
             _target = GameObject.FindAnyObjectByType<OmnicatLabs.CharacterControllers.CharacterController>().gameObject;
         }
-        
+
         if (agent.hasPath == true && agent.path.corners.Last() == _target.transform.position)
         {
             return true;
@@ -114,9 +117,9 @@ public class AIChaseState : MonoBehaviour, IEnemyState
             }
 
         }
-        else 
-        { 
-            return false; 
+        else
+        {
+            return false;
         }
     }
 
@@ -130,6 +133,7 @@ public class AIChaseState : MonoBehaviour, IEnemyState
 
         if (ai.mask != player.mask)
         {
+            Debug.Log("Transitionable");
             return true;
         }
         else

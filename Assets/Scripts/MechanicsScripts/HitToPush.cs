@@ -6,7 +6,7 @@ using UnityEngine.Events;
 using OmnicatLabs.Timers;
 using OmnicatLabs.Tween;
 
-public class HitToPush : MonoBehaviour, ISaveable
+public class HitToPush : MonoBehaviour
 {
     public float pushForce = 10f;
     public float lifetime = 2f;
@@ -23,7 +23,9 @@ public class HitToPush : MonoBehaviour, ISaveable
         startingPositions.AddRange(GetComponentsInChildren<Transform>().ToList().Select(trans => trans.localPosition));
         startingScales.AddRange(GetComponentsInChildren<Transform>().ToList().Select(trans => trans.localScale));
         startingRotations.AddRange(GetComponentsInChildren<Transform>().ToList().Select(trans => trans.localRotation));
-        SaveManager.Instance.Track(this);
+        //SaveManager.Instance.Track(this);
+        //Find the science to explain this later
+        SaveManager.Instance.onReset.AddListener(OnReset);
     }
 
     public void Push(Vector3 impactDirection)

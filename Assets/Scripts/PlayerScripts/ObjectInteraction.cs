@@ -2,7 +2,6 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
 using OmnicatLabs.Extensions;
-using UnityEngine.InputSystem.LowLevel;
 
 public class ObjectInteraction : MonoBehaviour
 {
@@ -12,7 +11,7 @@ public class ObjectInteraction : MonoBehaviour
 
     [SerializeField]
     [Tooltip("This is where you add the camera you want the raycast to fire from.")]
-    private Camera camera;
+    private new Camera camera;
 
     public float interactRange;
     public LayerMask interactableLayer;

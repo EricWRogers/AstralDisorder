@@ -18,14 +18,14 @@ public class InventorySystem : MonoBehaviour
     {
         if (Instance == null)
             Instance = this;
-        SaveManager.Instance.onSave.AddListener(HandleSave);
-        SaveManager.Instance.onReset.AddListener(HandleReset);
     }
 
     private void Start()
     {
         m_itemDictionary = new Dictionary<InventoryItemData, InventoryItem>();
         inventory = new List<InventoryItem>();
+        SaveManager.Instance.onSave.AddListener(HandleSave);
+        SaveManager.Instance.onReset.AddListener(HandleReset);
     }
 
     private void HandleSave()
@@ -104,6 +104,12 @@ public class InventorySystem : MonoBehaviour
         }
         if (onItemChangedCallBack != null)
             onItemChangedCallBack.Invoke();
+    }
+
+    public void Empty()
+    {
+        m_itemDictionary.Clear();
+        inventory.Clear();
     }
 
 }

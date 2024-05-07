@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -34,7 +33,7 @@ public class SettingsManager : MonoBehaviour
         QualitySettings.vSyncCount = isOn ? 1 : 0;
         //Application.targetFrameRate = isOn ? 60 : -1;
 
-        Debug.Log("VSync: " + (isOn ? "Enabled" : "Disabled"));// + ", Target Frame Rate: " + Application.targetFrameRate);
+        //Debug.Log("VSync: " + (isOn ? "Enabled" : "Disabled"));// + ", Target Frame Rate: " + Application.targetFrameRate);
     }
     
     public void ChangeFOV(float fovValue)
@@ -46,7 +45,6 @@ public class SettingsManager : MonoBehaviour
             Debug.Log("Field of View changed to: " + fovValue);
         }
     }
-    
 
     void PopulateResolutionDropdown()
     {
@@ -136,5 +134,4 @@ public class SettingsManager : MonoBehaviour
                 break;
         }
     }
-    
 }

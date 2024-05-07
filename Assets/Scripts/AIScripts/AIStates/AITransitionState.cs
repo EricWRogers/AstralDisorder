@@ -5,16 +5,19 @@ using UnityEngine.AI;
 
 public class AITransitionState : MonoBehaviour, IEnemyState //Every state must inherit from here.
 {
-    private AIStateMachine stateMachine;
+    [HideInInspector]
+    public AIStateMachine stateMachine;
     private NavMeshAgent agent;
     private GameObject target;
 
-    private GameObject[] transitions;
+    public GameObject[] transitions;
 
     private Animator anim;
     public void Enter(AIStateMachine stateMachine) //First thing the state does.
     {
+        
         anim = GetComponent<AIStateMachine>().anim;
+        anim.SetFloat("Sprint", 1);
         this.stateMachine = stateMachine;
         //Debug.Log("Entering Idle State");
         //agent = GetComponentInParent<NavMeshAgent>();
@@ -28,11 +31,14 @@ public class AITransitionState : MonoBehaviour, IEnemyState //Every state must i
     {
         //Debug.Log("Entering Transition State");
         ResetAI(agent.gameObject, target);
-        stateMachine.SetState(gameObject.GetComponent<AIChaseState>());
+       
     }
 
     public void Exit() //Last thing the state does before sending us wherever the user specified in update.
     {
+        anim.SetFloat("Sprint", 0);
+        agent.stoppingDistance = 0.3f;
+        agent.speed = DifficultySelector.Instance.currentSpeed;
         //Debug.Log("Exiting Transition State");
 
     }
@@ -46,9 +52,11 @@ public class AITransitionState : MonoBehaviour, IEnemyState //Every state must i
 
             foreach (GameObject trans in transitions)
             {
-                float distanceToTrans = Vector3.Distance(target.transform.position, trans.transform.position);
-
-                if (distanceToTrans < closestDistance)
+                NavMeshHit transHit, ai;
+                float distanceToTrans = Vector3.Distance(_player.transform.position, trans.transform.position);
+                NavMesh.SamplePosition(_ai.transform.position, out ai, 3.0f, NavMesh.AllAreas);
+                NavMesh.SamplePosition(trans.transform.position, out transHit, 3.0f, NavMesh.AllAreas);
+                if (distanceToTrans < closestDistance && transHit.mask == agent.areaMask)
                 {
                     closestDistance = distanceToTrans;
                     closestTrans = trans;
@@ -66,9 +74,30 @@ public class AITransitionState : MonoBehaviour, IEnemyState //Every state must i
                 int currentAreaAI = ai.mask;
                 int closestTransHitAreaHit = closestTransHit.mask;
 
-                if (currentAreaAI != currentAreaPlayer && closestTransHitAreaHit == currentAreaPlayer)
+                if (currentAreaAI != currentAreaPlayer && !LoadManager.isLoading /*&& closestTransHitAreaHit != currentAreaPlayer*/)
                 {
-                    _ai.GetComponent<NavMeshAgent>().Warp(closestTrans.transform.position);
+                    //_ai.GetComponent<NavMeshAgent>().Warp(closestTrans.transform.position);
+
+                    Debug.Log("Transition: " + closestTrans.name);
+                   
+                    agent.SetDestination(closestTrans.transform.position);
+                    agent.stoppingDistance = 0f;
+                    agent.speed = 10f;
+
+                    float dis = Vector3.Distance(gameObject.transform.position, closestTrans.transform.position);
+                    //Debug.Log("Dis: " + dis);
+
+                    if(dis < 0.1f)
+                    {
+                        Debug.Log("Transition: " + closestTrans.name);
+                        Debug.Log("AI Pos: " + gameObject.transform.position + " teleport: " + closestTrans.transform.position);
+                        stateMachine.SetState(gameObject.GetComponent<AIChaseState>());
+                    }
+                    
+                }
+                else
+                {
+
                 }
             }
         }

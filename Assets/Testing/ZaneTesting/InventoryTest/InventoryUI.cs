@@ -58,14 +58,30 @@ public class InventoryUI : MonoBehaviour
             slots.Clear();
         }
 
+        foreach (var slot in slots)
+        {
+            Destroy(slot.gameObject);
+        }
+        slots.Clear();
+
+        Debug.Log(slots.Count);
+
+        foreach (var item in InventorySystem.Instance.inventory)
+        {
+            var newSlot = Instantiate(slotPrefab, itemsParent);
+            slots.Add(newSlot.GetComponent<InventorySlot>());
+            newSlot.GetComponentInChildren<Image>().enabled = true;
+            newSlot.GetComponentInChildren<InventorySlot>().Additem(item.Data);
+        }
+        /*
         for (int i = 0; i < InventorySystem.Instance.inventory.Count; i++)
         {
-            if (slots.Count < InventorySystem.Instance.inventory.Count)
+            if (slots.Count < i + 1)
             {
                 var newSlot = Instantiate(slotPrefab, itemsParent);
                 slots.Add(newSlot.GetComponent<InventorySlot>());
             }
-            else if (slots.Count > InventorySystem.Instance.inventory.Count)
+            else if (slots.Count > i + 1)
             {
                 Destroy(slots[i]);
                 slots.RemoveAt(i);
@@ -76,7 +92,7 @@ public class InventoryUI : MonoBehaviour
                 slots[i].GetComponentInChildren<Image>().enabled = true;
                 slots[i].Additem(InventorySystem.Instance.inventory[i].Data);
             }
-        }
+        }*/
 
         if (slots.Count >= 1)
         {

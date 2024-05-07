@@ -65,7 +65,7 @@ public class LightPuzzle : MonoBehaviour
 
             LightPuzzleCompleted.Invoke();
 
-            doorLight.ChangeLightState();
+            //doorLight.ChangeLightState();
 
             foreach (var wire in finalWires)
             {

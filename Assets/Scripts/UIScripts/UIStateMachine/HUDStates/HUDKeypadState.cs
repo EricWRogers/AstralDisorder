@@ -30,5 +30,6 @@ public class HUDKeypadState : UIState
         //OmnicatLabs.CharacterControllers.CharacterController.Instance.SetControllerLocked(false, OmnicatLabs.CharacterControllers.CharacterController.Instance.playerIsHidden, false);
         OmnicatLabs.CharacterControllers.CharacterController.Instance.SetLockedNoDisable(false, playerHiddenState, false);
         Destroy(FindObjectOfType<KeypadUIController>().gameObject);
+        Time.timeScale = 1.0f;
     }
 }

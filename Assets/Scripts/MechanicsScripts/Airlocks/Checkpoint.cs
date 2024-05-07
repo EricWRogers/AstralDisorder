@@ -8,6 +8,7 @@ public class Checkpoint : MonoBehaviour
     private AIChaseState agent;
     public Animator animator;
     public bool playerIsHere;
+    public GameObject smokeParent;
 
     private void Start()
     {
